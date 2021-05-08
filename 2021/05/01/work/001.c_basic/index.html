@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>C语言基础-嵌入式面试 | Hexo</title>
+    
+    <meta name="google-site-verification" content="_H3HWQECXL0s4W6UUnXesjCG6GwWs8lnt2mDes7_41Y" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="C++" />
+    
+    <meta name="description" content="1. C和C++区别： C语言：面向过程的语言，其核心关注于问题是如何被解决的，把实现一个软件功能的过程分为一个个过程。 例如汽车要去加油，其过程为：汽车启动-&gt;汽车行驶-&gt;汽车加油。在这里我们不关注物件本身(汽车这个对象)，默认定义执行该过程的主题是汽车。 C++语言： 面向对象的语言，在计算机科学中的对象既可以表示客观世界的问题空间(namespace)中的具体的某个事物，又可以表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言基础-嵌入式面试">
+<meta property="og:url" content="http://yoursite.com/2021/05/01/work/001.c_basic/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. C和C++区别： C语言：面向过程的语言，其核心关注于问题是如何被解决的，把实现一个软件功能的过程分为一个个过程。 例如汽车要去加油，其过程为：汽车启动-&gt;汽车行驶-&gt;汽车加油。在这里我们不关注物件本身(汽车这个对象)，默认定义执行该过程的主题是汽车。 C++语言： 面向对象的语言，在计算机科学中的对象既可以表示客观世界的问题空间(namespace)中的具体的某个事物，又可以表">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2014/09/c-const-2021-01-15.png">
+<meta property="article:published_time" content="2021-04-30T22:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-02T13:45:31.922Z">
+<meta property="article:author" content="Andre">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2014/09/c-const-2021-01-15.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Hexo" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-156355099-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">The boy is no one</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-work/001.c_basic" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        C语言基础-嵌入式面试
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2021/05/01/work/001.c_basic/" class="article-date">
+         <time datetime="2021-04-30T22:00:00.000Z" itemprop="datePublished">2021-05-01</time>
+      </a>
+    </div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/C/" rel="tag">C++</a>
+    </div>
+
+                
+
+                
+   <div class="article-counter">
+      <i class="fa fa-file-word-o"></i>
+      <span class="post-count-item-text">本文字数: </span>
+      <span class="post-count">2.2k</span>
+      <i class="fa fa-clock-o"></i>
+      <span class="post-time-item-text">阅读时长: </span>
+      <span class="post-count">7 分钟 </span>
+   </div>
+
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h3 id="1-C和C-区别："><a href="#1-C和C-区别：" class="headerlink" title="1. C和C++区别："></a>1. C和C++区别：</h3><ul>
+<li>C语言：面向过程的语言，其核心关注于问题是如何被解决的，把实现一个软件功能的过程分为一个个过程。 例如汽车要去加油，其过程为：汽车启动-&gt;汽车行驶-&gt;汽车加油。在这里我们不关注物件本身(汽车这个对象)，默认定义执行该过程的主题是汽车。</li>
+<li>C++语言： 面向对象的语言，在计算机科学中的对象既可以表示客观世界的问题空间(namespace)中的具体的某个事物，又可以表示软件系统解空间的基本元素，如变量、数据结构、函数等。例如汽车要去加油，汽车&lt;启动，开车，加油&gt;, 我们关注物件(对象)本身，只需要考虑什么时间干什么事。启动，开车，加油属于这个物件的基本属性。</li>
+</ul>
+<h2 id="C语言基础部分："><a href="#C语言基础部分：" class="headerlink" title="C语言基础部分："></a>C语言基础部分：</h2><ul>
+<li><strong>标识符：</strong> 一个标识符以字母或者下划线开始的后面可以跟多个字母、数字、下划线。C标识符中不允许出现标点字符，并且区分大小写。</li>
+<li><strong>关键字：</strong> C中的保留字，这些保留字不能作为常量名，变量名和其他标识符的名称。常用的的关键字包括:while, do, for, break, continue, default, goto, char, double, int, long, short, float, </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">关键字</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">auto</td>
+<td align="left">声明自动变量</td>
+</tr>
+<tr>
+<td align="left">const</td>
+<td align="left">定义常量，如果一个变量可以被const修饰，那么它的值就不能被在改变</td>
+</tr>
+<tr>
+<td align="left">enum</td>
+<td align="left">声明枚举类型</td>
+</tr>
+<tr>
+<td align="left">extern</td>
+<td align="left"><strong>声明变量</strong>或函数是在其他文件或本文件其他位置定义</td>
+</tr>
+<tr>
+<td align="left">register</td>
+<td align="left">声明寄存器变量</td>
+</tr>
+<tr>
+<td align="left">sizeof</td>
+<td align="left">计算数据类型或变量长度(即所占的字节数)</td>
+</tr>
+<tr>
+<td align="left">static</td>
+<td align="left">声明静态变量</td>
+</tr>
+<tr>
+<td align="left">typeof</td>
+<td align="left">给数据类型取别名</td>
+</tr>
+<tr>
+<td align="left">union</td>
+<td align="left">声明共用体类型</td>
+</tr>
+<tr>
+<td align="left">void</td>
+<td align="left">声明函数无返回值或者无参数，<strong>声明无类型指针</strong></td>
+</tr>
+<tr>
+<td align="left">volatile</td>
+<td align="left">说明变量在程序执行中可以被隐含的改变</td>
+</tr>
+</tbody></table>
+<ul>
+<li>*<em>数据类型： *</em> C语言有四种数据类型：<ul>
+<li>*<em>基本数据类型: *</em>他们是算术类型，包括整数类型和浮点类型，注意char是属于整数类型的。 基本数据类型占用的空间(64位机器)：char-1字节，int-4字节， float-4字节，double-8字节。</li>
+<li><strong>枚举类型：</strong> 他们也是算术类型，被用来定义在程序中，只能赋予其一定的离散整数值的变量</li>
+<li><strong>void类型：</strong> 类型说明符 void表明没有可用的值</li>
+<li><strong>派生类型：</strong> 它们主要包括：指针，数组，结构，共用体，和函数类型</li>
+<li><strong>强制类型转换：</strong> (类型说明符)(表达式)</li>
+</ul>
+</li>
+</ul>
+<h4 id="变量："><a href="#变量：" class="headerlink" title="变量："></a><strong>变量：</strong></h4><p>变量是程序可操作的存储区名称。<strong>全局变量</strong>保存在内存的全局存储区中，占用静态的存储单元；<strong>局部变量</strong>保存在栈中，只有在所在函数被调用的时候才动态地为变量分配存储单元。</p>
+<p><strong>C语言经过编译后将内存分为一下几个区域：</strong></p>
+<ul>
+<li>栈(stack): 由编译器进行管理，自动分配和释放，存放函数调用过程的各种参数，局部变量，返回值以及函数的返回地址。操作方式类似于数据中的栈。</li>
+<li>堆(heap): 用于程序动态申请分配和释放空间。C语言中的malloc和free，C++中的new和delete均是在堆中进行的。正常情况下，程序员申请的空间在使用结束后应该释放，若程序员没有释放空间，则在程序结束后由系统自动回收。注意：这里的对并不是数据结构中的堆。</li>
+<li>全局(静态)存储区: 分为DATA和BSS段，DATA段(全局初始化区)存放初始化的全局变量和静态变量；BSS段(全局未初始化分区) 存放未初始化的全局变量和静态变量。程序运行结束时自动释放，其中在BSS段在程序执行之前会被系统自动清零，所以未初始化的全局变量和静态变量在程序执行之前已经为0.</li>
+<li>文字常量区：存放常量字符串，程序结束由系统释放。</li>
+<li>程序代码区：存放程序的二进制代码。</li>
+</ul>
+<p>因此，C语言的全局变量和局部变量在内存之中是有区别的，C语言的全局变量包括外部变量和静态变量，均是保存在全局存储区中，占用永久性的存储单元；局部变量，即自动变量，保存在栈中，只有在所在的函数被调用时才有系统动态在栈中分配临时性的存储单元。<br>        #include &lt;stdio.h&gt;<br>        #include &lt;stdlib.h&gt;<br>        int k1 = 1;<br>        int k2;<br>        static int k3 = 2;<br>        static int k4;<br>        int main( )<br>        {  staticint m1=2, m2;<br>            inti=1;<br>            char<em>p;<br>            charstr[10] = “hello”;<br>            char</em>q = “hello”;<br>            p= (char *)malloc( 100 );<br>            free(p);<br>            printf(“栈区-变量地址  i：%p\n”, &amp;i);<br>            printf(“                p：%p\n”, &amp;p);<br>            printf(“              str：%p\n”, str);<br>            printf(“                q：%p\n”, &amp;q);<br>            printf(“堆区地址-动态申请：%p\n”, p);<br>            printf(“全局外部有初值 k1：%p\n”, &amp;k1);<br>            printf(“    外部无初值 k2：%p\n”, &amp;k2);<br>            printf(“静态外部有初值 k3：%p\n”, &amp;k3);<br>            printf(“    外静无初值 k4：%p\n”, &amp;k4);<br>            printf(“  内静态有初值 m1：%p\n”, &amp;m1);<br>            printf(“  内静态无初值 m2：%p\n”, &amp;m2);<br>            printf(“文字常量地址    ：%p, %s\n”,q, q);<br>            printf(“程序区地址      ：%p\n”,&amp;main);<br>            return0;<br>        }</p>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><p>常量是固定值，在程序的执行期间不会改变。它可以是任意基本的数据类型，整数常量，浮点常量，字符常量，枚举常量等。</p>
+<ul>
+<li><p><strong>定义常量：</strong> 定义常量有两种方法，使用#define或者使用const关键字，这两种方法从本质上是不同的。#define 是宏定义，它不能定义常量，但宏定义可以实现在字面意义上和其它定义常量相同的功能，本质的区别就在于 #define 不为宏名分配内存，而 const 也不为常量分配内存，怎么回事呢，其实 const 并不是去定义一个常量，而是去改变一个变量的存储类，把该变量所占的内存变为只读！<br> <img src="https://www.runoob.com/wp-content/uploads/2014/09/c-const-2021-01-15.png" alt=""><br>示例</p>
+<pre><code>#define length 10
+#define NEWLINE &apos;\n&apos;
+
+const int var=5;</code></pre></li>
+<li><p>整数常量：整数常量可以是十进制，八进制，十六进制的常量，前缀指定基数，0x/0X表示十六进制，0表示八进制，不带前缀默认代表十进制。<strong>整数常量也可以带一个后缀，U代表无符号整数, L代表长整数，大小写和顺序任意。</strong></p>
+</li>
+</ul>
+<h3 id="C-语言的三大特性"><a href="#C-语言的三大特性" class="headerlink" title="C++语言的三大特性"></a>C++语言的三大特性</h3><ul>
+<li><strong>封装：</strong> C++语言支持数据封装，类是数据封装的工具，对象是数据封装的实现，在封装中，还提供一种对数据访问控制的机制，是的一些数据隐藏在封装体内，具有隐藏性。封装和外接的信息交换是通过操作接口进行的，这种访问的控制机制体现在类的共有成员(public)，私有成员(private)，和保护成员(protected)上。私有成员只有类内说明的一些函数才能访问；共有成员类外的函数也可以访问，保护成员只有该类的成员函数和派生类才能访问。</li>
+<li><strong>继承：</strong> C++语言允许单继承和多继承。一个类可以根据需要生成它的派生类，派生类还可以再生成派生类。派生类可以继承基类的成员同时也可以定义自己的成员。继承是实现数据抽象和共享的一种机制。该机制可以避免不能重复利用程序导致的资源浪费。</li>
+<li><strong>多态：</strong> 多态指的是对不同类发出的相同消息会有不同的实现。多态性也可以理解为，在一般类中定义的属性和服务被特殊类继承后，可以具有不同的数据类型或不同的实现。简单来说，多态性指的是发出同样的消息被不同的数据类型的对象接收后会导致不同的行为。C++支持多态性主要表现在：C++语言允许函数重载和运算符重载；C++语言通过定义虚函数来支持动态联编。多态特性的工作依赖虚函数的定义，在需要解决多态问题的重载成员函数前，加上virtual关键字，那么该成员函数就变成了虚函数，从上例代码运行的结果看，系统成功的分辨出了对象的真实类型，成功的调用了各自的重载成员函数。</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="//www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Andre"
+        },
+        "headline": "C语言基础-嵌入式面试",
+        "image": "http://yoursite.comhttps://www.runoob.com/wp-content/uploads/2014/09/c-const-2021-01-15.png",
+        "keywords": "C++",
+        "genre": "术业",
+        "datePublished": "2021-05-01",
+        "dateCreated": "2021-05-01",
+        "dateModified": "2021-05-02",
+        "url": "http://yoursite.com/2021/05/01/work/001.c_basic/",
+        "description": "1. C和C++区别：
+C语言：面向过程的语言，其核心关注于问题是如何被解决的，把实现一个软件功能的过程分为一个个过程。 例如汽车要去加油，其过程为：汽车启动-&gt;汽车行驶-&gt;汽车加油。在这里我们不关注物件本身(汽车这个对象)，默认定义执行该过程的主题是汽车。
+C++语言： 面向对象的语言，在计算机科学中的对象既可以表示客观世界的问题空间(namespace)中的具体的某个事物，又可以表",
+        "wordCount": 527
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+<div id="comment-container"></div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yinglong.li.925" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="https://github.com/AndreLYL" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/05/03/work/002.ISO26262/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            work/002.ISO26262
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/02/06/Algorithm/003.vector_cplusplus/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">C++：vector容器</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/08/work/004.RTOS/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/08/work/004.RTOS/" class="title">work/004.RTOS</a></p>
+                            <p class="item-date"><time datetime="2021-05-08T11:28:08.130Z" itemprop="datePublished">2021-05-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/05/work/005.FreeRTOS/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cdn.jsdelivr.net/gh/AndreLYL/BlogPictures/blog_files/img/20210508182833.png)" alt="work/005.FreeRTOS" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/05/work/005.FreeRTOS/" class="title">work/005.FreeRTOS</a></p>
+                            <p class="item-date"><time datetime="2021-05-05T19:31:27.120Z" itemprop="datePublished">2021-05-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/04/work/Emmbed_system_QA/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pic1.zhimg.com/80/v2-0f09c39ef43d96bbb68864e85ed9fcd0_720w.jpg)" alt="work/Emmbed_system_QA" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/04/work/Emmbed_system_QA/" class="title">work/Emmbed_system_QA</a></p>
+                            <p class="item-date"><time datetime="2021-05-04T13:12:56.393Z" itemprop="datePublished">2021-05-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/03/work/003.Autosar/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://img-blog.csdnimg.cn/20190722153832837.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h5ZnhfZmh3,size_16,color_FFFFFF,t_70)" alt="work/003.Autosar" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/03/work/003.Autosar/" class="title">work/003.Autosar</a></p>
+                            <p class="item-date"><time datetime="2021-05-03T18:11:11.813Z" itemprop="datePublished">2021-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/03/work/002.ISO26262/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.21ic.com/uploads/21/5f28c2704a418.png)" alt="work/002.ISO26262" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/03/work/002.ISO26262/" class="title">work/002.ISO26262</a></p>
+                            <p class="item-date"><time datetime="2021-05-03T12:03:58.105Z" itemprop="datePublished">2021-05-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/point-cloud/" rel="tag">point cloud</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 16.67px;">Blogs</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/CV/" style="font-size: 16.67px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/object-detection/" style="font-size: 13.33px;">object detection</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/point-cloud/" style="font-size: 13.33px;">point cloud</a> <a href="/tags/pytorch/" style="font-size: 10px;">pytorch</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Andre</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    <p><center>本站总访问量:<span id="busuanzi_value_site_pv"></span>次</center></p>
+</span>
+<span id="busuanzi_container_site_uv">
+  <p><center>本站访客数: <span id="busuanzi_value_site_uv"></span>人次</center></p>
+</span>
+</div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: 'b9ac5f0611abdbe3fa3a',
+        clientSecret: 'a336c5fbe85883f1c86fb1ddbcaef160fafbe8bb',
+        id: '3694b837a2abe010f0c47a7bc27305dc',
+        repo: 'andrelyl.github.io',
+        owner: 'AndreLYL',
+        admin: "AndreLYL"
+    })
+    gitalk.render('comment-container')
+</script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+
+    
+
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

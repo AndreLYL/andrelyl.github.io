@@ -6,22 +6,22 @@
     
 
     
-    <title>算法：判断质数 | Hexo</title>
+    <title>C++：vector容器 | Hexo</title>
     
     <meta name="google-site-verification" content="_H3HWQECXL0s4W6UUnXesjCG6GwWs8lnt2mDes7_41Y" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="keywords" content="C++" />
     
-    <meta name="description" content="质数定义：指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个正因数的数）。 思路1：定义根据定义，采用2到n-1中的每一个数去除n，如果不能被整除，则该数为质数。时间复杂度：O(n)。 1234567891011bool is_prime(int n)&amp;#123;    bool isprime &#x3D; true;    for(int i&amp;#">
+    <meta name="description" content="二维向量的遍历方法123456789&#x2F;&#x2F;二维向量的遍历，迭代器遍历vector&lt;vector&lt;int&gt; &gt; array &#x3D; &amp;#123;&amp;#123;1,2,8,9&amp;#125;,&amp;#123;2,4,9,12&amp;#125;,&amp;#123;4,7,10,13&amp;#125;,&amp;#123;6,8,11,15&amp;#125;&amp;#125;;  vector&lt;ve">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法：判断质数">
-<meta property="og:url" content="http://yoursite.com/2020/02/23/Algorithm/001.is_prime/index.html">
+<meta property="og:title" content="C++：vector容器">
+<meta property="og:url" content="http://yoursite.com/2021/02/06/Algorithm/003.vector_cplusplus/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="质数定义：指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个正因数的数）。 思路1：定义根据定义，采用2到n-1中的每一个数去除n，如果不能被整除，则该数为质数。时间复杂度：O(n)。 1234567891011bool is_prime(int n)&amp;#123;    bool isprime &#x3D; true;    for(int i&amp;#">
+<meta property="og:description" content="二维向量的遍历方法123456789&#x2F;&#x2F;二维向量的遍历，迭代器遍历vector&lt;vector&lt;int&gt; &gt; array &#x3D; &amp;#123;&amp;#123;1,2,8,9&amp;#125;,&amp;#123;2,4,9,12&amp;#125;,&amp;#123;4,7,10,13&amp;#125;,&amp;#123;6,8,11,15&amp;#125;&amp;#125;;  vector&lt;ve">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-22T23:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-25T10:10:30.271Z">
+<meta property="article:published_time" content="2021-02-05T23:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-06T11:28:23.368Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -170,14 +170,14 @@ ga('send', 'pageview');
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-Algorithm/001.is_prime" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Algorithm/003.vector_cplusplus" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        算法：判断质数
+        C++：vector容器
         </h1>
     
 
@@ -188,8 +188,8 @@ ga('send', 'pageview');
                 
     <div class="article-date">
       <i class="fa fa-calendar"></i>
-      <a href="/2020/02/23/Algorithm/001.is_prime/" class="article-date">
-         <time datetime="2020-02-22T23:00:00.000Z" itemprop="datePublished">2020-02-23</time>
+      <a href="/2021/02/06/Algorithm/003.vector_cplusplus/" class="article-date">
+         <time datetime="2021-02-05T23:00:00.000Z" itemprop="datePublished">2021-02-06</time>
       </a>
     </div>
 
@@ -208,7 +208,7 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">234</span>
+      <span class="post-count">191</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
       <span class="post-count">1 分钟 </span>
@@ -219,12 +219,10 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>质数定义：指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个正因数的数）。</p>
-<h3 id="思路1：定义"><a href="#思路1：定义" class="headerlink" title="思路1：定义"></a>思路1：定义</h3><p>根据定义，采用2到n-1中的每一个数去除n，如果不能被整除，则该数为质数。时间复杂度：O(n)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">bool is_prime(int n)</span><br><span class="line">&#123;</span><br><span class="line">    bool isprime &#x3D; true;</span><br><span class="line">    for(int i&#x3D;2; i &lt; n; i++)&#123;</span><br><span class="line">        if(n % i&#x3D;&#x3D;0)&#123;</span><br><span class="line">            isprime&#x3D;false;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return isprime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h3 id="二维向量的遍历方法"><a href="#二维向量的遍历方法" class="headerlink" title="二维向量的遍历方法"></a>二维向量的遍历方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;二维向量的遍历，迭代器遍历</span><br><span class="line">vector&lt;vector&lt;int&gt; &gt; array &#x3D; &#123;&#123;1,2,8,9&#125;,&#123;2,4,9,12&#125;,&#123;4,7,10,13&#125;,&#123;6,8,11,15&#125;&#125;;  </span><br><span class="line">vector&lt;vector&lt;int &gt;&gt;::iterator iter;</span><br><span class="line">for (iter &#x3D; array.begin(); iter !&#x3D; array.end() ; ++iter) &#123;</span><br><span class="line">    for (int i &#x3D; 0; i &lt; (*iter).size(); ++i) &#123;</span><br><span class="line">        cout &lt;&lt; (*iter)[i] &lt;&lt; &quot; &quot; ;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="思路2：质数筛选定理"><a href="#思路2：质数筛选定理" class="headerlink" title="思路2：质数筛选定理"></a>思路2：质数筛选定理</h3><p><strong>质数筛选定理：</strong> 如果n不能够被不大于根号n的任何质数整除，则n是一个质数。<br><strong>参考链接：</strong> <a href="https://zhuanlan.zhihu.com/p/100051075" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/100051075</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">bool is_prime(int n)&#123;</span><br><span class="line">    bool isprime&#x3D; true;</span><br><span class="line">    int max &#x3D; static_cast&lt;int&gt;(sqrt(n)); \\隐式类型转换</span><br><span class="line">    for(int j&#x3D;2; j&lt;&#x3D;max; j++)&#123;</span><br><span class="line">        if(n%j &#x3D;&#x3D; 0)&#123;</span><br><span class="line">            isprime&#x3D;false;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">    return isprime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;二维向量的遍历，数组下表</span><br><span class="line">vector&lt;vector&lt;int&gt; &gt; array &#x3D; &#123;&#123;1,2,8,9&#125;,&#123;2,4,9,12&#125;,&#123;4,7,10,13&#125;,&#123;6,8,11,15&#125;&#125;;  </span><br><span class="line"></span><br><span class="line">for (int i &#x3D; 0; i &lt; array.size(); i++)</span><br><span class="line">&#123;</span><br><span class="line">    for(int j &#x3D; 0; j &lt; array[i].size(); j++)</span><br><span class="line">        cout &lt;&lt; V[i][j] &lt;&lt; &quot; &quot;;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
@@ -292,18 +290,16 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "Andre"
         },
-        "headline": "算法：判断质数",
+        "headline": "C++：vector容器",
         "image": "http://yoursite.com",
         "keywords": "C++",
         "genre": "术业",
-        "datePublished": "2020-02-23",
-        "dateCreated": "2020-02-23",
-        "dateModified": "2021-01-25",
-        "url": "http://yoursite.com/2020/02/23/Algorithm/001.is_prime/",
-        "description": "质数定义：指在大于1的自然数中，除了1和该数自身外，无法被其他自然数整除的数（也可定义为只有1与该数本身两个正因数的数）。
-思路1：定义根据定义，采用2到n-1中的每一个数去除n，如果不能被整除，则该数为质数。时间复杂度：O(n)。
-1234567891011bool is_prime(int n)&#123;    bool isprime &#x3D; true;    for(int i&#",
-        "wordCount": 212
+        "datePublished": "2021-02-06",
+        "dateCreated": "2021-02-06",
+        "dateModified": "2021-02-06",
+        "url": "http://yoursite.com/2021/02/06/Algorithm/003.vector_cplusplus/",
+        "description": "二维向量的遍历方法123456789&#x2F;&#x2F;二维向量的遍历，迭代器遍历vector&lt;vector&lt;int&gt; &gt; array &#x3D; &#123;&#123;1,2,8,9&#125;,&#123;2,4,9,12&#125;,&#123;4,7,10,13&#125;,&#123;6,8,11,15&#125;&#125;;  vector&lt;ve",
+        "wordCount": 147
     }
 </script>
 
@@ -382,20 +378,20 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2020/02/25/Major/02.Apollo_Introduction/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2021/05/01/work/001.c_basic/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            Apollo学习
+            C语言基础-嵌入式面试
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2020/02/23/Major/01.Tensorflow_Udacity/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2021/01/25/Algorithm/001.is_prime/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">Tensorflow入门_Udacity</p>
+        <p class="article-nav-title">算法：判断质数</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -417,7 +413,7 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/05/01/Major/08.learn_pytorch/" class="thumbnail">
+                            <a href="/2021/05/08/work/004.RTOS/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -428,19 +424,19 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/05/01/Major/08.learn_pytorch/" class="title">pytorch学习</a></p>
-                            <p class="item-date"><time datetime="2020-04-30T22:00:00.000Z" itemprop="datePublished">2020-05-01</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/08/work/004.RTOS/" class="title">work/004.RTOS</a></p>
+                            <p class="item-date"><time datetime="2021-05-08T11:28:08.130Z" itemprop="datePublished">2021-05-08</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/04/08/Major/04.Pixor/" class="thumbnail">
+                            <a href="/2021/05/05/work/005.FreeRTOS/" class="thumbnail">
     
     
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gh8muz5up6j30zb0cn0vm.jpg)" alt="基于鸟瞰图的点云目标检测：PIXOR" class="thumbnail-image"></span>
+        <span style="background-image:url(https://cdn.jsdelivr.net/gh/AndreLYL/BlogPictures/blog_files/img/20210508182833.png)" alt="work/005.FreeRTOS" class="thumbnail-image"></span>
     
     
 </a>
@@ -448,19 +444,19 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/04/08/Major/04.Pixor/" class="title">基于鸟瞰图的点云目标检测：PIXOR</a></p>
-                            <p class="item-date"><time datetime="2020-04-07T22:00:00.000Z" itemprop="datePublished">2020-04-08</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/05/work/005.FreeRTOS/" class="title">work/005.FreeRTOS</a></p>
+                            <p class="item-date"><time datetime="2021-05-05T19:31:27.120Z" itemprop="datePublished">2021-05-05</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/04/03/paper_birdnet/" class="thumbnail">
+                            <a href="/2021/05/04/work/Emmbed_system_QA/" class="thumbnail">
     
     
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gh94w3hwayj30si0j4wmu.jpg)" alt="基于鸟瞰图的点云目标检测：Birdnet+" class="thumbnail-image"></span>
+        <span style="background-image:url(https://pic1.zhimg.com/80/v2-0f09c39ef43d96bbb68864e85ed9fcd0_720w.jpg)" alt="work/Emmbed_system_QA" class="thumbnail-image"></span>
     
     
 </a>
@@ -468,19 +464,19 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/04/03/paper_birdnet/" class="title">基于鸟瞰图的点云目标检测：Birdnet+</a></p>
-                            <p class="item-date"><time datetime="2020-04-02T22:00:00.000Z" itemprop="datePublished">2020-04-03</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/04/work/Emmbed_system_QA/" class="title">work/Emmbed_system_QA</a></p>
+                            <p class="item-date"><time datetime="2021-05-04T13:12:56.393Z" itemprop="datePublished">2021-05-04</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/03/15/Major/06.point_cloud_bev/" class="thumbnail">
+                            <a href="/2021/05/03/work/003.Autosar/" class="thumbnail">
     
     
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gh92uux1orj30qe0680wc.jpg)" alt="点云数据生成鸟瞰图表示" class="thumbnail-image"></span>
+        <span style="background-image:url(https://img-blog.csdnimg.cn/20190722153832837.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h5ZnhfZmh3,size_16,color_FFFFFF,t_70)" alt="work/003.Autosar" class="thumbnail-image"></span>
     
     
 </a>
@@ -488,19 +484,19 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/03/15/Major/06.point_cloud_bev/" class="title">点云数据生成鸟瞰图表示</a></p>
-                            <p class="item-date"><time datetime="2020-03-14T23:00:00.000Z" itemprop="datePublished">2020-03-15</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/03/work/003.Autosar/" class="title">work/003.Autosar</a></p>
+                            <p class="item-date"><time datetime="2021-05-03T18:11:11.813Z" itemprop="datePublished">2021-05-03</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="thumbnail">
+                            <a href="/2021/05/03/work/002.ISO26262/" class="thumbnail">
     
     
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gh949ih6ixj30y30h9dhj.jpg)" alt="学习资源整理：自动驾驶，深度学习，目标检测" class="thumbnail-image"></span>
+        <span style="background-image:url(https://www.21ic.com/uploads/21/5f28c2704a418.png)" alt="work/002.ISO26262" class="thumbnail-image"></span>
     
     
 </a>
@@ -508,9 +504,9 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2020/03/08/Major/03.Resource_for_self_driving/" class="title">学习资源整理：自动驾驶，深度学习，目标检测</a></p>
-                            <p class="item-date"><time datetime="2020-03-07T23:00:00.000Z" itemprop="datePublished">2020-03-08</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/03/work/002.ISO26262/" class="title">work/002.ISO26262</a></p>
+                            <p class="item-date"><time datetime="2021-05-03T12:03:58.105Z" itemprop="datePublished">2021-05-03</time></p>
                         </div>
                     </li>
                 
@@ -523,7 +519,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -533,7 +529,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -543,7 +539,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/point-cloud/" rel="tag">point cloud</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/point-cloud/" rel="tag">point cloud</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -553,7 +549,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 20px;">Blogs</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/CV/" style="font-size: 20px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/object-detection/" style="font-size: 15px;">object detection</a> <a href="/tags/photo/" style="font-size: 20px;">photo</a> <a href="/tags/point-cloud/" style="font-size: 15px;">point cloud</a> <a href="/tags/pytorch/" style="font-size: 10px;">pytorch</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 15px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
+            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 16.67px;">Blogs</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/CV/" style="font-size: 16.67px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/object-detection/" style="font-size: 13.33px;">object detection</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/point-cloud/" style="font-size: 13.33px;">point cloud</a> <a href="/tags/pytorch/" style="font-size: 10px;">pytorch</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
         </div>
     </div>
 
@@ -623,7 +619,7 @@ ga('send', 'pageview');
     var gitalk = new Gitalk({
         clientID: 'b9ac5f0611abdbe3fa3a',
         clientSecret: 'a336c5fbe85883f1c86fb1ddbcaef160fafbe8bb',
-        id: '002e768272a156bf1206d4d2b1e5f663',
+        id: '083275f05bab4b03e4f2139c50a0aef2',
         repo: 'andrelyl.github.io',
         owner: 'AndreLYL',
         admin: "AndreLYL"

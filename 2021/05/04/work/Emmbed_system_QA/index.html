@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>work/Emmbed_system_QA | Hexo</title>
+    
+    <meta name="google-site-verification" content="_H3HWQECXL0s4W6UUnXesjCG6GwWs8lnt2mDes7_41Y" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="" />
+    
+    <meta name="description" content="title: 嵌入式面试常见问题整理date: 2021-05-09categories: 术业tags: 嵌入式thumbnail: http:&#x2F;&#x2F;ww1.sinaimg.cn&#x2F;large&#x2F;006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg 基本概念单工，半双工，全双工 单工：简单的说就是一方只能发信息，另一方则只能收信息，通信是单向的。 半双工：比单工先进一点，就是双方都">
+<meta property="og:type" content="article">
+<meta property="og:title" content="work&#x2F;Emmbed_system_QA">
+<meta property="og:url" content="http://yoursite.com/2021/05/04/work/Emmbed_system_QA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="title: 嵌入式面试常见问题整理date: 2021-05-09categories: 术业tags: 嵌入式thumbnail: http:&#x2F;&#x2F;ww1.sinaimg.cn&#x2F;large&#x2F;006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg 基本概念单工，半双工，全双工 单工：简单的说就是一方只能发信息，另一方则只能收信息，通信是单向的。 半双工：比单工先进一点，就是双方都">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-0f09c39ef43d96bbb68864e85ed9fcd0_720w.jpg">
+<meta property="article:published_time" content="2021-05-04T13:12:56.393Z">
+<meta property="article:modified_time" content="2021-05-08T23:11:07.519Z">
+<meta property="article:author" content="Andre">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-0f09c39ef43d96bbb68864e85ed9fcd0_720w.jpg">
+    
+
+    
+        <link rel="alternate" href="/" title="Hexo" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-156355099-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">The boy is no one</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-work/Emmbed_system_QA" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        work/Emmbed_system_QA
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2021/05/04/work/Emmbed_system_QA/" class="article-date">
+         <time datetime="2021-05-04T13:12:56.393Z" itemprop="datePublished">2021-05-04</time>
+      </a>
+    </div>
+
+
+                
+
+                
+                
+
+                
+   <div class="article-counter">
+      <i class="fa fa-file-word-o"></i>
+      <span class="post-count-item-text">本文字数: </span>
+      <span class="post-count">2.2k</span>
+      <i class="fa fa-clock-o"></i>
+      <span class="post-time-item-text">阅读时长: </span>
+      <span class="post-count">7 分钟 </span>
+   </div>
+
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>title: 嵌入式面试常见问题整理<br>date: 2021-05-09<br>categories: 术业<br>tags: 嵌入式<br>thumbnail: <a href="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg" target="_blank" rel="noopener">http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg</a></p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="单工，半双工，全双工"><a href="#单工，半双工，全双工" class="headerlink" title="单工，半双工，全双工"></a>单工，半双工，全双工</h4><ul>
+<li>单工：简单的说就是一方只能发信息，另一方则只能收信息，通信是单向的。</li>
+<li>半双工：比单工先进一点，就是双方都能发信息，但同一时间则只能一方发信息。</li>
+<li>-全双工：比半双工再先进一点，就是双方不仅都能发信息，而且能够同时发送。</li>
+</ul>
+<h4 id="FLASH-和-EEPROM区别"><a href="#FLASH-和-EEPROM区别" class="headerlink" title="FLASH 和 EEPROM区别"></a>FLASH 和 EEPROM区别</h4><p>基本概念：</p>
+<ul>
+<li>ROM： Read-Only Memory</li>
+<li>RAM： Random Access Memory</li>
+<li>FLASH: Flash 存储器（FLASH EEPROM）又称闪存，快闪。它是EEPROM的一种。它结合了ROM和RAM的长处。不仅具备电子可擦除可编辑（EEPROM）的性能，还不会断电丢失数据同时可以快速读取数据</li>
+<li>EEPROM: Electrically-Erasable Programmable Read-Only Memory</li>
+<li>SRAM：静态RAM，读写速度非常快，比较昂贵。一般用于CPU的一级缓冲，二级缓冲。</li>
+<li>DRAM：动态RAM，DRAM保留数据的时间很短，速度比SRAM慢，但是比任何ROM快。计算机的内存是DRAM。</li>
+</ul>
+<p>FLASH和EEPROM的最大区别是FLASH按扇区操作，EEPROM则按字节操作，二者寻址方法不同，存储单元的结构也不同，FLASH的电路结构较简单，同样容量占芯片面积较小，成本自然比EEPROM低，因而适合用作程序存储器，EEPROM则更多的用作非易失的数据存储器。</p>
+<p>目前的单片机，RAM主要是做运行时数据存储器,FLASH主要是程序存储器,EEPROM主要是用以在程序运行保存一些需要掉电不丢失的数据. </p>
+<ol>
+<li><strong>Nano Flash和NOR Flash的区别：</strong><br>目前Flash主要有NANO和NOR两种</li>
+</ol>
+<ul>
+<li>NOR Flash：该种Flash的读写和创建的SDRAM读写一样，用户可以直接运行装载在NOR Flash里面的代码，这样可以减少SRAM的容量从而节约成本。</li>
+<li>NANO Flash：NAND Flash没有采取内存的随即读取技术，它的读取是一次读取一块的形式来进行的，通常是一次读取512个字节，采用这种技术的Flash比较廉价，用户无法直接运行上面的代码。</li>
+</ul>
+<p><img src="https://pic1.zhimg.com/80/v2-0f09c39ef43d96bbb68864e85ed9fcd0_720w.jpg" alt=""></p>
+<h3 id="总线协议"><a href="#总线协议" class="headerlink" title="总线协议"></a>总线协议</h3><h4 id="CAN总线协议-Controller-Area-Network"><a href="#CAN总线协议-Controller-Area-Network" class="headerlink" title="CAN总线协议(Controller Area Network)"></a>CAN总线协议(Controller Area Network)</h4><p>CAN总线协议是由博世开发的一种基于消息广播模式的串行通信总线，该协议非常适合于现场控制领域，主要用于实现汽车ECU之间的可靠通信。该通讯协议最高速率可达到1Mbps, 容错能力强。CAN控制器包含强大的检错和处理机制。另外CAN的节点之间不会传输大数据块，一帧CAN消息最多传输8字节用户数据。</p>
+<p><strong>总线特点</strong></p>
+<ul>
+<li><strong>多主控制</strong>，总线空闲时所有单元都可以发送消息，最先访问总线的单元获得发送权，多个单元同时发送时，发送优先级高的可以发送。发送的消息保温不包含原地址和目标地址，只通过标识符表示消息的功能和优先级。</li>
+<li><strong>总线为事件触发型</strong>，只有消息要发送时，节点才向总线上广播消息; 同时每个节点也可以通过发送远程帧请求其他节点发送数据。</li>
+<li><strong>总线上可同时连接多个节点</strong>，可连接节点总数在理论上是没有限制的，实际可连接的节点数受总线上的时间延迟和电气负载限制。</li>
+<li><strong>符合OSI通信系统参考模型</strong>，属于物理层和数据链路层。两线式总线结构，电气信号为差分式，通信介质可以采用双绞线，同轴电缆和光导纤维，一般采用双绞线。</li>
+<li><strong>总线电平</strong>：显性(Dominant): 0, 隐性(Recessive): 1, CAN总线的信号电平具有线与特性，即显性电平0总是会掩盖隐性电平1，如果不同的节点同时发送显性和隐性电平，总线总是表现出显性电平。只有所有节点发送隐性电平是，总线才表现为隐性。<strong>线与特性是CAN总线仲裁机制的电路基础</strong>。</li>
+<li><strong>高速CAN</strong>：总线通信速度最高1Mbp(40m条件下)。高速CAN时，CANH与CANL电压相同时为逻辑“1” (CANH=CANL=2.5V)。CANH和CANL电压相差2V时为逻辑“0” (CANH=3.5V, CANL=1.5V)。高速CAN收发器在共模电压范围内(-12V~12V),将CANH和CANL电压差大于0.9V成为显性状态，将CANH和CANL电压差小于0.5定义为隐性状态。</li>
+</ul>
+<p><img src="https://img2018.cnblogs.com/blog/917884/201906/917884-20190629175927325-911993050.png" alt="高速CAN信号电平（ ISO 11898-2）"></p>
+<ul>
+<li><strong>低速CAN</strong>：定义CANH和CANL电压相差 5V （CANH = 0V, CANL = 5V）时为逻辑“1”，相差 2.2V （CANH = 3.6V, CANL = 1.4V）时为逻辑“0”。</li>
+</ul>
+<p><img src="https://img2018.cnblogs.com/blog/917884/201906/917884-20190629180018330-1726697444.png" alt="低速CAN信号电平（ ISO 11898-3）"></p>
+<p><strong>CAN报文帧结构</strong>：在CAN总线上，报文以“帧”的形式发送，每个报文帧包含以下部分：</p>
+<ul>
+<li>帧起始：总线空闲时为隐性状态，帧起始由单个显性位构成，标志报文开始，在总线上起同步作用。</li>
+<li>仲裁段：仲裁段由报文的标识符完成，即ID，标准CAN的标识符为11位，扩展CAN中为29位。</li>
+<li>控制段：主要定义了数据域的字节长度，通过数据长度码，接收节点可以判断报文数据是否完整。</li>
+<li>数据域：主要包含0~8个字节数据。</li>
+<li>CRC域：循环冗余码校验</li>
+<li>帧结束：由一串七个隐性位组成，表示报文帧的结束。</li>
+</ul>
+<p><strong>CAN报文帧种类</strong></p>
+<p>（1）数据帧：由发送节点发出，包含0 - 8个数据字节。</p>
+<p>（2）远程帧：发送远程帧向网络节点请求发送某一标识符的数据帧。</p>
+<p>（3）错误帧：总线节点发现错误时，以错误帧的方式通知网络上的其他节点。</p>
+<p>（4）过载帧：发送过载帧，表示当前节点不能处理后续的报文（如帧延迟等）。</p>
+<h4 id="SPI协议"><a href="#SPI协议" class="headerlink" title="SPI协议"></a>SPI协议</h4><p>SPI(Serial Peripheral interface)串行外围设备接口，该接口主要用在EEPROM，Flash，实时时钟，AD转化器，数字信号处理器和数字信号解码器之间。</p>
+<ul>
+<li>该协议是一种高速的，<strong>全双工同步串行</strong>通信总线。</li>
+<li>没有速度限制，一般可达到10Mbps。</li>
+<li>主要有四根线：MOSI， MISO，SCLK，CS(片选，选择从设备)。数据在上升下降沿改变。</li>
+<li>优点：全双工通信，简单，传输速率快</li>
+<li>缺点：没有指定的流控制，没有应答机制确认是否收到数据，相对IIC可靠性不高。</li>
+</ul>
+<ol>
+<li>SPI的四种模式：<br>SPI有四种工作模式，SPI为了和外设进行数据交换，根据外设工作要求，其输出串行同步时钟的极性(CPOL)和时钟相位(CPHA)可以进行配置。CPOL决定SPI空闲时，时钟信号的电平。CPHA决定SPI在SCLK的第几个边沿开始采样数据。</li>
+</ol>
+<ul>
+<li>CPOL=0：串行同步时钟的空闲状态是低电平</li>
+<li>CPOL=1：串行同步时钟的空闲状态是高电平</li>
+<li>CPHA=0：SPI在串行同步时钟的第一个跳边沿开始采样</li>
+<li>CPHA=1：SPI在串行同步时钟的第二个跳边沿开始采样</li>
+</ul>
+<h3 id="DMA"><a href="#DMA" class="headerlink" title="DMA"></a>DMA</h3><p>DMA(Direct Memory Access),即直接存储器访问，DMA的传输方式可以无需CPU直接进行控制传输，也没有中断处理方式那样的保护现场和恢复现场的过程。通过硬件为RAM与I/O设备开辟一条直接传输数据的通路，可以使CPU的效率大为提高。</p>
+<ul>
+<li>作用： 用于内存和内存之间或内存和外设之间的高速数据传输。</li>
+</ul>
+<ol>
+<li><strong>DMA传输包括哪些操作？</strong>(STM32为例)<br>每一次DMA传输包括三个操作<ul>
+<li>通过DMA的寄存器寻址，从外设数据寄存器或存储器单元加载数据。</li>
+<li>DMA计数器在数据存储结束后递减，该计算器中包含仍需执行的事务数目。</li>
+</ul>
+</li>
+</ol>
+<p>产生事件后，外设会向DMA控制器发送请求信号，DMA控制器根据通道优先级处理该请求，只要DMA控制器访问外设，DMA控制器就会向外设发送确认信号，外设获得确认信号后，便会立即释放请求。一旦外设使请求失效，DMA就会释放确认信号。如果有更多的请求，外设可以启动下一个事务。</p>
+<h2 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h2><h3 id="Static关键字作用"><a href="#Static关键字作用" class="headerlink" title="Static关键字作用"></a>Static关键字作用</h3><h3 id="Const关键字作用"><a href="#Const关键字作用" class="headerlink" title="Const关键字作用"></a>Const关键字作用</h3><h3 id="Voilatile关键字作用"><a href="#Voilatile关键字作用" class="headerlink" title="Voilatile关键字作用"></a>Voilatile关键字作用</h3><p>###</p>
+
+        </div>
+        <footer class="article-footer">
+            
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="//www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Andre"
+        },
+        "headline": "work/Emmbed_system_QA",
+        "image": "http://yoursite.comhttps://pic1.zhimg.com/80/v2-0f09c39ef43d96bbb68864e85ed9fcd0_720w.jpg",
+        "keywords": "",
+        "genre": "",
+        "datePublished": "2021-05-04",
+        "dateCreated": "2021-05-04",
+        "dateModified": "2021-05-09",
+        "url": "http://yoursite.com/2021/05/04/work/Emmbed_system_QA/",
+        "description": "title: 嵌入式面试常见问题整理date: 2021-05-09categories: 术业tags: 嵌入式thumbnail: http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg
+基本概念单工，半双工，全双工
+单工：简单的说就是一方只能发信息，另一方则只能收信息，通信是单向的。
+半双工：比单工先进一点，就是双方都",
+        "wordCount": 121
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+<div id="comment-container"></div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yinglong.li.925" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="https://github.com/AndreLYL" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/05/05/work/005.FreeRTOS/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            work/005.FreeRTOS
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/05/03/work/003.Autosar/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">work/003.Autosar</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/08/work/004.RTOS/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/08/work/004.RTOS/" class="title">work/004.RTOS</a></p>
+                            <p class="item-date"><time datetime="2021-05-08T11:28:08.130Z" itemprop="datePublished">2021-05-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/05/work/005.FreeRTOS/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cdn.jsdelivr.net/gh/AndreLYL/BlogPictures/blog_files/img/20210508182833.png)" alt="work/005.FreeRTOS" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/05/work/005.FreeRTOS/" class="title">work/005.FreeRTOS</a></p>
+                            <p class="item-date"><time datetime="2021-05-05T19:31:27.120Z" itemprop="datePublished">2021-05-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/04/work/Emmbed_system_QA/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pic1.zhimg.com/80/v2-0f09c39ef43d96bbb68864e85ed9fcd0_720w.jpg)" alt="work/Emmbed_system_QA" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/04/work/Emmbed_system_QA/" class="title">work/Emmbed_system_QA</a></p>
+                            <p class="item-date"><time datetime="2021-05-04T13:12:56.393Z" itemprop="datePublished">2021-05-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/03/work/003.Autosar/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://img-blog.csdnimg.cn/20190722153832837.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h5ZnhfZmh3,size_16,color_FFFFFF,t_70)" alt="work/003.Autosar" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/03/work/003.Autosar/" class="title">work/003.Autosar</a></p>
+                            <p class="item-date"><time datetime="2021-05-03T18:11:11.813Z" itemprop="datePublished">2021-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/05/03/work/002.ISO26262/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.21ic.com/uploads/21/5f28c2704a418.png)" alt="work/002.ISO26262" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/05/03/work/002.ISO26262/" class="title">work/002.ISO26262</a></p>
+                            <p class="item-date"><time datetime="2021-05-03T12:03:58.105Z" itemprop="datePublished">2021-05-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/point-cloud/" rel="tag">point cloud</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 16.67px;">Blogs</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/CV/" style="font-size: 16.67px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/object-detection/" style="font-size: 13.33px;">object detection</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/point-cloud/" style="font-size: 13.33px;">point cloud</a> <a href="/tags/pytorch/" style="font-size: 10px;">pytorch</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Andre</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    <p><center>本站总访问量:<span id="busuanzi_value_site_pv"></span>次</center></p>
+</span>
+<span id="busuanzi_container_site_uv">
+  <p><center>本站访客数: <span id="busuanzi_value_site_uv"></span>人次</center></p>
+</span>
+</div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: 'b9ac5f0611abdbe3fa3a',
+        clientSecret: 'a336c5fbe85883f1c86fb1ddbcaef160fafbe8bb',
+        id: '1d77dddb9333eb8dc379184fbdbe9994',
+        repo: 'andrelyl.github.io',
+        owner: 'AndreLYL',
+        admin: "AndreLYL"
+    })
+    gitalk.render('comment-container')
+</script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+
+    
+
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>
