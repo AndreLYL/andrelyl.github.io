@@ -83,12 +83,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="FreeRTOS学习笔记02">
 <meta property="og:url" content="http://yoursite.com/2021/05/09/work/005.FreeRTOS/index.html">
-<meta property="og:site_name" content="Andre">
+<meta property="og:site_name" content="Andreの博客">
 <meta property="og:description" content="FreeRTOSFreeRTOS是一个迷你的实时操作系统内核。作为一个轻量级的操作系统，功能包括：任务管理、时间管理、信号量、消息队列、内存管理、记录功能、软件定时器、协程等，可基本满足较小系统的需要。 FreeRTOS是为小型嵌入式系统设计的可裁剪实时内核。其主要特点有：  调度器支持抢占式调度，协助式调度，或者两者混合。时间片可选 占用空间小，简单，易用  FreeRTOS的源码结构在Free">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AndreLYL/BlogPictures/blog_files/img/20210508182833.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AndreLYL/BlogPictures/blog_files/img/20210509005027.png">
 <meta property="article:published_time" content="2021-05-08T22:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-08T23:15:18.054Z">
+<meta property="article:modified_time" content="2021-05-09T13:21:20.690Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="嵌入式">
 <meta name="twitter:card" content="summary">
@@ -128,7 +128,7 @@
 
 
 
-  <title>FreeRTOS学习笔记02 | Andre</title>
+  <title>FreeRTOS学习笔记02 | Andreの博客</title>
   
 
 
@@ -158,7 +158,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Andre</span>
+        <span class="site-title">Andreの博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -274,7 +274,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Andre">
+      <meta itemprop="name" content="Andreの博客">
     </span>
 
     
@@ -353,7 +353,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  2.1k
                 </span>
               
 
@@ -369,7 +369,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  7
                 </span>
               
             </div>
@@ -424,10 +424,28 @@
 <li>消息缓冲区(MessageBuffer)：在流式缓冲区的基础上实现的，可以对消息进行设计改进。每一条消息的写入增加了一个字节用来表示该消息的长度，读取时需要至少一次性读出一条消息，否则会返回0.</li>
 <li>任务通知(Notify): 不同于上面的任务通信方式(使用某种通信对象，通信对象是独立于任务的实体，有单独的存储空间，可以实现数据的传递和较复杂的同步，互斥功能)， 通知是发向一个指定的任务的，直接改变该任务 TCB的某些变量。</li>
 </ul>
+<h3 id="FreeRTOS队列"><a href="#FreeRTOS队列" class="headerlink" title="FreeRTOS队列"></a>FreeRTOS队列</h3><p>在实际应用中，一个任务或中断服务函数经常需要和另一个任务进行消息传递。裸机情况下通常通过全局变量实现。但是操作系统使用全局变量的方式会涉及“资源管理”问题。<strong>FreeRTOS中采用队列机制完成任务与任务，和任务与中断之间的消息传递。</strong> 队列可以存储有限的，大小固定的数据项目。任</p>
 <h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>FreeRTOS创建任务、队列、信号量有两种方法：</p>
 <p>第一种是<strong>由用户自行定义所需的RAM</strong>，这种方法也叫静态的方法。静态方法的函数一般由Static结尾，比如任务创建 <code>xTaskCreateStatic()</code>。 使用此函数创建任务的时候需要用户定义任务堆栈。</p>
 <p>另一种是<strong>动态的申请所需的RAM</strong>，使用动态内存管理时，FreeRTOS内核在创建任务、队列、信号量的时候会动态的申请RAM。C语言标准库的malloc()和free()也可以实现动态内存管理，但这种方法在小型嵌入式系统中效率不高，会占用很多代码空间，并且他们的线程不是安全的，程序执行的时间也是不确定的，此外还会导致内存碎片。因此在FreeRTOS中，内核采用 <code>pvPortMalloc()</code>代替 <code>malloc()</code> 申请内存，采用 <code>vPortFree()</code>函数释放内存。<strong>关于内存分配，FreeRTOS提供了5这种内存分配的方法：</strong> 也就是在5个.c文件，heap_1.c, heap_2.c, heap_3.c, heap_4.c, heap_5.c。</p>
 <p><strong>内存碎片：</strong><br>内存分配与管理的方法中需要解决的问题之一就是内存碎片，其产生过程如下图所示，一个新的内存堆被系统按照应用需求分成多个大小不同的内存块。应用在使用完内存后就会进行释放，同时新的应用产生也需要分配新的可用该内存。经过多次申请和释放后，内存块被不断地分割，导致内存中存在大量的很小的内存块。这些内存块太小导致大多数应用无法使用，因此就形成了内存碎片。这些内存碎片的不断增加会导致实际可用内存越来越少。最终应用程序因为分配不到合适的内存而崩溃。而FreeRTOS的heap_4.c就提供了一个解决内存碎片的方法，即将内存碎片进行合并组成一个新的可用的大内存块。<br><img src="https://cdn.jsdelivr.net/gh/AndreLYL/BlogPictures/blog_files/img/20210509005027.png" alt=""></p>
+<p><strong>heap_1.c简介</strong><br>动态内存分配需要一个内存堆，在FreeRTOS中的内存堆为ucHeap[],大小为configTOTAL_HEAP_SIZE.</p>
+<p>heap_1特性如下：</p>
+<ol>
+<li>使用一旦创建好任务，信号量和队列就再也不会删除的应用，实际上大多数的FreeRTOS的应用都是这样的。</li>
+<li>具有可确定性(执行所花费的时间大多数都是一样的)，而且不会导致内存碎片。</li>
+<li>代码实现和内存分配的过程都非常简单，内存是从一个静态的数组中分配的，也就是适合与那些不需要动态分配内存的应用。</li>
+</ol>
+<p><strong>heap_2.c简介</strong></p>
+<p><strong>heap_3.c简介</strong></p>
+<p><strong>heap_4.c简介</strong><br>heap_4提供了一个最优的内存分配方法，不像heap_2, heap_4会将内存中的碎片合并成一个大的可用内存块，他提供了内存合并算法。内存堆为ucHeap[], 大小同样为configTOTAL_HEAP_SIZE。可以通过函数xPortGetFreeHeapSize()获取剩余内存大小。</p>
+<p>heap_4特性如下：</p>
+<ol>
+<li>可以用在那些需要重复创建和删除任务、队列、信号量和互斥信号量等应用中。</li>
+<li>不会像heap_2那样产生严重的内存分配碎片，即使分配的内存大小是随机的。</li>
+<li>具有不确定性，但是远比C标准库的malloc()和free()效率高。</li>
+</ol>
+<p><strong>heap_5简介</strong><br>heap_5使用了heap_4相同的合并算法，内存管理实现基本相同，但是heap_5允许内存堆跨越多个不连续的内存段。如果使用heap_5需要调用函数xPortDefineHeapRegions()来对内存堆做初始化处理，该函数执行完之前禁止调用任何会调用pvPortMalloc()的函数。</p>
 <p>参考资料：<br>[1] <a href="https://zhuanlan.zhihu.com/p/336687316" target="_blank" rel="noopener">FreeRTOS源码探析之——任务调度相关</a></p>
 
       
@@ -541,7 +559,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Andre</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">仰天大笑出门去，我辈岂是蓬蒿人</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -606,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FreeRTOS"><span class="nav-number">1.</span> <span class="nav-text">FreeRTOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FreeRTOS的源码结构"><span class="nav-number">1.1.</span> <span class="nav-text">FreeRTOS的源码结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FreeRTOS的任务间通信机制"><span class="nav-number">1.2.</span> <span class="nav-text">FreeRTOS的任务间通信机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存管理"><span class="nav-number">1.3.</span> <span class="nav-text">内存管理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#FreeRTOS"><span class="nav-number">1.</span> <span class="nav-text">FreeRTOS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FreeRTOS的源码结构"><span class="nav-number">1.1.</span> <span class="nav-text">FreeRTOS的源码结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FreeRTOS的任务间通信机制"><span class="nav-number">1.2.</span> <span class="nav-text">FreeRTOS的任务间通信机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FreeRTOS队列"><span class="nav-number">1.3.</span> <span class="nav-text">FreeRTOS队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存管理"><span class="nav-number">1.4.</span> <span class="nav-text">内存管理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -640,7 +658,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.1k</span>
+    <span title="Site words total count">44.4k</span>
   
 </div>
 

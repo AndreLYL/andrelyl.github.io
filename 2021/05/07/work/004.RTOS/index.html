@@ -83,10 +83,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="FreeRTOS学习笔记01">
 <meta property="og:url" content="http://yoursite.com/2021/05/07/work/004.RTOS/index.html">
-<meta property="og:site_name" content="Andre">
+<meta property="og:site_name" content="Andreの博客">
 <meta property="og:description" content="基本概念 操作系统：操作系统是一个用以提供基础计算机功能的计算机程序，它可以向其他程序提供服务，应用来实现用户想要实现的功能。操作系统对应用程序的支持使得开发者在在开发应用程序是更加快捷，简单，易维护。  RTOS：大部分操作系统允许多个应用程序同时执行，这种成为多任务。但实际上，在任何一个时间点上只有一个进程在独立执行。由于应用程序切换足够快，好像所有的程序同时执行。操作系统中有一个调度器(Sc">
 <meta property="article:published_time" content="2021-05-06T22:00:00.000Z">
-<meta property="article:modified_time" content="2021-05-08T23:15:43.372Z">
+<meta property="article:modified_time" content="2021-05-09T09:21:57.577Z">
 <meta property="article:author" content="Andre">
 <meta property="article:tag" content="嵌入式">
 <meta name="twitter:card" content="summary">
@@ -125,7 +125,7 @@
 
 
 
-  <title>FreeRTOS学习笔记01 | Andre</title>
+  <title>FreeRTOS学习笔记01 | Andreの博客</title>
   
 
 
@@ -155,7 +155,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Andre</span>
+        <span class="site-title">Andreの博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Andre">
+      <meta itemprop="name" content="Andreの博客">
     </span>
 
     
@@ -350,7 +350,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.5k
+                  3.3k
                 </span>
               
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  11
                 </span>
               
             </div>
@@ -425,6 +425,36 @@
 <p><strong>调度算法：</strong><br>实时操作系统需要采用各种算法和策略保证系统行为的可预测性，并且调用一切可利用的资源完成实时控制任务。 其实时调度算法分为三种类别：基于优先级的调度算法(Priority-driven scheduling-PD)，基于CPU使用比例的共享式调度算法(Share-drivescheduling-SD)，基于时间进程的调度算法(Time—driven schedulinq-TD)。</p>
 <p>基于优先级的调度算法给每个进程分配一个优先级，在每次进程调度的时候，最高优先级任务首先被执行。算法的类型分为两种：</p>
 <p>静态调度：静态调度在系统开始运行前进行调度，严格的静态调度在系统运行时无法对任务重新调度。静态调度的目标是把任务分配给各个处理机，并对每一处立即给出所要运行的静态运行顺序。静态调度算法实现简单</p>
+<h3 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h3><p><strong>死锁：</strong> 死锁是指一组进程中的各个进程均占有不会释放的资源，但因互相申请被其他进程所占用的不会释放的资源而处于的一种永久等待的状态。</p>
+<p><strong>死锁的四个条件：</strong> </p>
+<ul>
+<li>互斥条件(Mutual exclusion)：资源不能被共享，只能由一个进程使用</li>
+<li>请求与保持条件(Hold and wait)：已经得到资源的进程可以再次申请新的资源</li>
+<li>非剥夺条件(No pre-emption)：已经分配的资源不能从相应的进程中被强制的剥夺</li>
+<li>循环等待条件(Circular wait)：系统中的若干进程组成的环路，该环路中每个进程都在灯带相邻进程正占用的资源 </li>
+</ul>
+<p><strong>互斥锁：</strong> 互斥锁是一种独占锁，当线程A加锁成功后，此时的互斥锁已经被线程A独占了，只要A没有释放受众的锁，线程B加锁就会失败，于是就是会释放CPU让给其他线程，既然B释放了CPU，也就意味着线程B的加锁代码会被阻塞。对于互斥锁加锁失败而阻塞的现象，是由操作系统内核实现的。</p>
+<p><strong>自旋锁：</strong> 自旋锁是一种特殊的互斥锁，当资源被加锁后，其他线程想要再次加锁，此时该线程不会被阻塞睡眠而是陷入循环等待状态(CPU不能做其他事情)，循环检查资源持有者是否已经释放了资源，这样做的好处是减少了线程从睡眠到唤醒的资源消耗，但是会一直占用CPU资源。适用于资源的锁被持有时间段，而又不希望在线程的唤醒上花费太多资源的情况。</p>
+<ol>
+<li>自旋锁为什么不能睡眠？<br>因为需要循环检测lock变量。</li>
+</ol>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><ol>
+<li><p><strong>介绍一下FreeRTOS的内存管理？</strong></p>
+<ul>
+<li>heap_1：只申请不释放，适用于一旦创建好任务，信号量和队列就再也不会删除的应用。</li>
+<li>heap_2：最佳匹配，即申请又释放，适用于可能会重复的删除的任务，队列，信号量等应用中，需要注意内存碎片的产生问题。</li>
+<li>heap_3：简单封装malloc,free,对其进行线程保护。使用时需要编译器提供一个内存堆，编辑器库需要提供malloc()和free()函数。</li>
+<li>heap_4：最佳匹配+合并相邻内存，具有不确定性，但不会产生严重的内存碎片</li>
+<li>heap_5：最佳匹配+合并不连续的内存区。</li>
+</ul>
+</li>
+<li><p><strong>简述RTOS中，栈空间的最大使用率和栈溢出的检测方法？</strong></p>
+<ul>
+<li>方法一：在任务切换时检测任务指针是否越界，如果越界就会在任务切换时触发栈溢出的钩子函数</li>
+<li>方法二：在任务创建的时候将任务战所有数据初始化为0Xa5，任务切换进行任务栈检测时检测末尾的16个字节是否都是0xa5，通过这种方式检测栈是否溢出。</li>
+</ul>
+</li>
+</ol>
 <h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>[1] <a href="https://blog.csdn.net/u012993936/article/details/41145863" target="_blank" rel="noopener">https://blog.csdn.net/u012993936/article/details/41145863</a><br>[2] <a href="https://zhuanlan.zhihu.com/p/86861756" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/86861756</a></p>
 
       
@@ -542,7 +572,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Andre</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">仰天大笑出门去，我辈岂是蓬蒿人</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -607,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实时性，硬实时，软实时"><span class="nav-number">1.1.</span> <span class="nav-text">实时性，硬实时，软实时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务调度"><span class="nav-number">1.2.</span> <span class="nav-text">任务调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">1.3.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实时性，硬实时，软实时"><span class="nav-number">1.1.</span> <span class="nav-text">实时性，硬实时，软实时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务调度"><span class="nav-number">1.2.</span> <span class="nav-text">任务调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#锁"><span class="nav-number">1.3.</span> <span class="nav-text">锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存管理"><span class="nav-number">1.4.</span> <span class="nav-text">内存管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">1.5.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -641,7 +671,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.1k</span>
+    <span title="Site words total count">44.4k</span>
   
 </div>
 
