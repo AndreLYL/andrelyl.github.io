@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -93,7 +93,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
@@ -856,201 +856,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/28/Theme_hueman/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Andre">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/28/Theme_hueman/" itemprop="url">Hueman主题的折腾之路</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-28T00:00:00+01:00">
-                2019-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%AF%E4%B8%9A/" itemprop="url" rel="index">
-                    <span itemprop="name">术业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  552
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Hueman主题的安装"><a href="#Hueman主题的安装" class="headerlink" title="Hueman主题的安装"></a>Hueman主题的安装</h2><p>虽然网上各种博客的教程大多使用的都是Next主题，但是个人审美上还是对Next的风格接受不能，Hueman才是我心目中的博客风格应有的样子。下面就介绍一下Hueman主题的使用步骤：</p>
-<ol>
-<li>手动下载<a href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener" title="下载地址">Hueman主题</a>，或者将主题Clone到本地 ../themes 目录下 <code>git clone https://github.com/ppoffice/hexo-theme-hueman.git</code></li>
-<li>在Hexo文件目录下打开<strong>_config.xml</strong>文件，找到关键词 <strong>theme</strong> 将主题名称修改为：<strong>hexo-theme-hueman</strong></li>
-<li>在<strong>\Hexo\themes\hexo-theme-hueman</strong>目录下找到<strong>_config.xml.example</strong>文件，将后缀<strong>.example</strong>去掉</li>
-<li>在Hexo文件目录下打开git bash，依次执行 <code>git clean</code> 和 <code>git g -d</code>，将Hueman主题成功提交到Gitpage. 打开博客网址即可看到主题效果。</li>
-</ol>
-<h2 id="Hueman主题基本配置"><a href="#Hueman主题基本配置" class="headerlink" title="Hueman主题基本配置"></a>Hueman主题基本配置</h2><p>theme: 后面改为hueman</p>
-<h3 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h3><p>language: 后面改为zh-CN</p>
-<h3 id="修改title"><a href="#修改title" class="headerlink" title="修改title"></a>修改title</h3><p>这个会在你主页上，显示在浏览器框中的网页名称</p>
-<h3 id="修改subtitle副标题"><a href="#修改subtitle副标题" class="headerlink" title="修改subtitle副标题"></a>修改subtitle副标题</h3><p>博客logo边上的文字说明</p>
-<h3 id="修改author"><a href="#修改author" class="headerlink" title="修改author"></a>修改author</h3><p>author: 后面添加你自己的名字（这个将在网页的底部显示）</p>
-<h3 id="添加about页面"><a href="#添加about页面" class="headerlink" title="添加about页面"></a>添加about页面</h3><p>在Hexo文件目录下的打开git bash 输入以下代码：<br><code>hexo new page &quot;about&quot;</code></p>
-<h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p>Hueman支持多种评论系统，但有些目前已经停止服务，有些在国内被墙了，比如以前很喜欢用disqus，可惜国内并不支持。最近发现gitalk比较好用，因此打算将评论系统改成gitalk。</p>
-<p><strong>Hueman主题下配置Gitalk</strong><br>在Hueman主题下配置Gitalk的基本方法如下：</p>
-<ol>
-<li>设置github认证： 登陆github, 在个人账号下选择Setting, 然后选择developer setting, 接着选择OAuth Apps在该界面下选择新建Github App.其中Homepage URL和Authorization callback URL都必须是一样的，比如我个人github的博客地址<a href="https://andrelyl.github.io/" target="_blank" rel="noopener">https://andrelyl.github.io/</a> 。然后点击保存，记下Client ID和 Client Secret。</li>
-<li>打开Hueman的主题配置文件_config.yml，在gitalk部分填写相关信息：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">	on: true  					 </span><br><span class="line">	owner: 			# Github user name 					</span><br><span class="line">	repo: 			# url个人博客的			</span><br><span class="line">	client_id: 		# 上一步得到的Client ID		</span><br><span class="line">	client_secret: 	# 填写上一步得到的Client Secret	</span><br><span class="line">	admin: 			# GitHub repo owner and collaborators who can initialize github issues</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>部署到Github上                            </li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/28/German%20Driver's%20_license_words/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1535,6 +1340,201 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/28/Theme_hueman/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/28/Theme_hueman/" itemprop="url">Hueman主题的折腾之路</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-28T00:00:00+01:00">
+                2019-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%AF%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">术业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  552
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Hueman主题的安装"><a href="#Hueman主题的安装" class="headerlink" title="Hueman主题的安装"></a>Hueman主题的安装</h2><p>虽然网上各种博客的教程大多使用的都是Next主题，但是个人审美上还是对Next的风格接受不能，Hueman才是我心目中的博客风格应有的样子。下面就介绍一下Hueman主题的使用步骤：</p>
+<ol>
+<li>手动下载<a href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener" title="下载地址">Hueman主题</a>，或者将主题Clone到本地 ../themes 目录下 <code>git clone https://github.com/ppoffice/hexo-theme-hueman.git</code></li>
+<li>在Hexo文件目录下打开<strong>_config.xml</strong>文件，找到关键词 <strong>theme</strong> 将主题名称修改为：<strong>hexo-theme-hueman</strong></li>
+<li>在<strong>\Hexo\themes\hexo-theme-hueman</strong>目录下找到<strong>_config.xml.example</strong>文件，将后缀<strong>.example</strong>去掉</li>
+<li>在Hexo文件目录下打开git bash，依次执行 <code>git clean</code> 和 <code>git g -d</code>，将Hueman主题成功提交到Gitpage. 打开博客网址即可看到主题效果。</li>
+</ol>
+<h2 id="Hueman主题基本配置"><a href="#Hueman主题基本配置" class="headerlink" title="Hueman主题基本配置"></a>Hueman主题基本配置</h2><p>theme: 后面改为hueman</p>
+<h3 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h3><p>language: 后面改为zh-CN</p>
+<h3 id="修改title"><a href="#修改title" class="headerlink" title="修改title"></a>修改title</h3><p>这个会在你主页上，显示在浏览器框中的网页名称</p>
+<h3 id="修改subtitle副标题"><a href="#修改subtitle副标题" class="headerlink" title="修改subtitle副标题"></a>修改subtitle副标题</h3><p>博客logo边上的文字说明</p>
+<h3 id="修改author"><a href="#修改author" class="headerlink" title="修改author"></a>修改author</h3><p>author: 后面添加你自己的名字（这个将在网页的底部显示）</p>
+<h3 id="添加about页面"><a href="#添加about页面" class="headerlink" title="添加about页面"></a>添加about页面</h3><p>在Hexo文件目录下的打开git bash 输入以下代码：<br><code>hexo new page &quot;about&quot;</code></p>
+<h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p>Hueman支持多种评论系统，但有些目前已经停止服务，有些在国内被墙了，比如以前很喜欢用disqus，可惜国内并不支持。最近发现gitalk比较好用，因此打算将评论系统改成gitalk。</p>
+<p><strong>Hueman主题下配置Gitalk</strong><br>在Hueman主题下配置Gitalk的基本方法如下：</p>
+<ol>
+<li>设置github认证： 登陆github, 在个人账号下选择Setting, 然后选择developer setting, 接着选择OAuth Apps在该界面下选择新建Github App.其中Homepage URL和Authorization callback URL都必须是一样的，比如我个人github的博客地址<a href="https://andrelyl.github.io/" target="_blank" rel="noopener">https://andrelyl.github.io/</a> 。然后点击保存，记下Client ID和 Client Secret。</li>
+<li>打开Hueman的主题配置文件_config.yml，在gitalk部分填写相关信息：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">	on: true  					 </span><br><span class="line">	owner: 			# Github user name 					</span><br><span class="line">	repo: 			# url个人博客的			</span><br><span class="line">	client_id: 		# 上一步得到的Client ID		</span><br><span class="line">	client_secret: 	# 填写上一步得到的Client Secret	</span><br><span class="line">	admin: 			# GitHub repo owner and collaborators who can initialize github issues</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>部署到Github上                            </li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/work/002.ISO26262/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1854,184 +1854,6 @@
         
           
             <h1 id="超声波雷达"><a href="#超声波雷达" class="headerlink" title="超声波雷达"></a>超声波雷达</h1><iframe width="560" height="315" src="https://www.youtube.com/embed/52tgWnyOnSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Andre">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/" itemprop="url">大学时光纪念-雪中石大360全景</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-20T00:00:00+01:00">
-                2019-02-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%8E%A9%E7%89%A9/" itemprop="url" rel="index">
-                    <span itemprop="name">玩物</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  8
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="360全景图–石大雪景"><a href="#360全景图–石大雪景" class="headerlink" title="360全景图–石大雪景"></a>360全景图–石大雪景</h2><iframe src="https://720yun.com/t/955jOpuktk6" frameborder="no" width="700" height="500" ></iframe>
-
-
-
-
-
-
           
         
       
@@ -2424,6 +2246,184 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/" itemprop="url">大学时光纪念-雪中石大360全景</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-20T00:00:00+01:00">
+                2019-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%A9%E7%89%A9/" itemprop="url" rel="index">
+                    <span itemprop="name">玩物</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  8
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="360全景图–石大雪景"><a href="#360全景图–石大雪景" class="headerlink" title="360全景图–石大雪景"></a>360全景图–石大雪景</h2><iframe src="https://720yun.com/t/955jOpuktk6" frameborder="no" width="700" height="500" ></iframe>
+
+
+
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2560,12 +2560,32 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
