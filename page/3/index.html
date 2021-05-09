@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -93,9 +93,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -187,6 +187,26 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/%20" rel="section">
             
@@ -229,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/Markdown/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/German%20traffic%20regulations-Halten&Parken/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Andre">
@@ -248,7 +268,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/01/02/Markdown/" itemprop="url">Markdown语法</a></h1>
+                <a class="post-title-link" href="/2020/01/02/German%20traffic%20regulations-Halten&Parken/" itemprop="url">德国交规：停车与泊车</a></h1>
         
 
         <div class="post-meta">
@@ -304,6 +324,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  450
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -322,10 +373,61 @@
       
         
           
-            <h3 id="图片并排显示"><a href="#图片并排显示" class="headerlink" title="图片并排显示"></a>图片并排显示</h3><p>注意插入图片的代码段放在同一行 </p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span> <span class="attr">class</span>=<span class="string">"half"</span>&gt;</span></span></span><br><span class="line">   <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> <span class="attr">alt</span>=<span class="string">"图片说明"</span> <span class="attr">title</span>=<span class="string">"图片标题"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> <span class="attr">alt</span>=<span class="string">"图片说明"</span> <span class="attr">title</span>=<span class="string">"图片标题"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> <span class="attr">alt</span>=<span class="string">"图片说明"</span> <span class="attr">title</span>=<span class="string">"图片标题"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="给图片添加题注"><a href="#给图片添加题注" class="headerlink" title="给图片添加题注"></a>给图片添加题注</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">题注</span>](<span class="link">图片地址</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="指定图片的显示大小"><a href="#指定图片的显示大小" class="headerlink" title="指定图片的显示大小"></a>指定图片的显示大小</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> <span class="attr">alt</span>=<span class="string">"图片说明"</span> <span class="attr">title</span>=<span class="string">"图片标题"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+            <h1 id="Parken"><a href="#Parken" class="headerlink" title="Parken"></a>Parken</h1><h2 id="基本规则"><a href="#基本规则" class="headerlink" title="基本规则"></a>基本规则</h2><ul>
+<li>只能在有泊车标志的区域泊车</li>
+<li>街道右侧泊车（单向车道和右侧有铁轨的街道例外，可以左侧停车）</li>
+<li>机动车辆在没有拖车的情况下可以在公共区域泊车的时间最大<strong>不超过14天</strong></li>
+<li>在保留3.05米车道宽度的前提下可以在路边上停车（确保消防车可以通过） </li>
+</ul>
+<h2 id="Wo-ist-Parken-verboten-（禁止泊车区域）"><a href="#Wo-ist-Parken-verboten-（禁止泊车区域）" class="headerlink" title="Wo ist Parken verboten?（禁止泊车区域）"></a>Wo ist Parken <a href="https://de.wikipedia.org/wiki/Parkverbot" target="_blank" rel="noopener">verboten</a>?（禁止泊车区域）</h2><ul>
+<li><strong>Kreuzungen und Einmündungen</strong> : 交叉路口和路口前后五米内不能泊车（从道路交叉点算起）</li>
+<li><strong>Andreaskreuze</strong> : 公路与铁道或电车轨道交叉口（X型路标）：市内前后五米内，市外前后五十米内不能泊车</li>
+<li><strong>Haltestellen</strong> : 停车标志前后15米内不能泊车</li>
+<li><strong>Grenzmarkierungen</strong> ：边界线标记上禁止泊车   </li>
+<li><strong>Vorfahrtstraßen</strong> ：在建筑区域外具有优先权的街道上禁止泊车</li>
+<li><strong>Fahrstreifenbegrenzungen</strong>：</li>
+<li><strong>Bordsteinabsenkungen</strong> : 马路牙子理论上不能泊车</li>
+<li><strong>Grundstücksein- &amp; ausfahrten</strong> : 狭窄的道路上不能泊车</li>
+<li><strong>Verkehrsberuhigter Bereich</strong>：除非上下车和装卸货物，禁止泊车</li>
+<li><strong>Schachtdeckel</strong>：窨井盖上不能泊车，仅适用于那些可以在人行道上泊车的区域</li>
+<li><strong>Halteverbot</strong> : 禁止停车区域也禁止泊车</li>
+</ul>
+<h1 id="Halten"><a href="#Halten" class="headerlink" title="Halten"></a>Halten</h1><p>停车适用于短暂停车（打电话，将信件投放信箱）的情况，时间不超过三分钟，司机不能离开汽车。</p>
+<h2 id="基本规则-1"><a href="#基本规则-1" class="headerlink" title="基本规则"></a>基本规则</h2><ul>
+<li>交通信号灯、铁道口X标志、优先权标志、停车标志十米内禁止停车。</li>
+<li>消防车专用道禁止停车</li>
+<li>人行横道前5米以及人行横道上禁止停车</li>
+</ul>
+<h2 id="Halteverbot"><a href="#Halteverbot" class="headerlink" title="Halteverbot"></a>Halteverbot</h2><ul>
+<li><strong>Enge und unübersichtliche Straßenstellen</strong></li>
+<li><strong>Scharfe Kurven</strong></li>
+<li><strong>Ein- und Ausfädelungsstreifen</strong></li>
+<li><strong>Bahnübergänge</strong></li>
+<li><strong>Autobahnen und Kraftfahrstraßen</strong></li>
+<li><strong>Mit Pfeilen markierte Strecken (z.B. vor Ampeln)</strong></li>
+<li><strong>Die Fahrbahn eines Kreisverkehrs</strong></li>
+<li><strong>Taxenstände</strong></li>
+</ul>
+<h1 id="相关标志"><a href="#相关标志" class="headerlink" title="相关标志"></a>相关标志</h1><table>
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaicvw7x9gj305a05adfq.jpg" height="200px" title="Parkplatz" alt="Grenzmarkierungen" ></td>
+<td><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaico1mdmtj30460460st.jpg" height="200px" title="禁止泊车" alt="Grenzmarkierungen"></td>
+</tr>
+<tr>
+<td><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaidmk0vcmj303j05a0sl.jpg" height="200px" title="Parken auf Gehwegen" alt="Grenzmarkierungen"></td>
+<td><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaieofuztrj30sg0ocwgt.jpg" alt="Grenzmarkierungen" title="Grenzmarkierungen" height="200" alt="Grenzmarkierungen"></td>
+</tr>
+<tr>
+<td><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaif42euspj30zk0nr75g.jpg" height="200px" title="Verkehrsberuhigter Bereich" alt="Grenzmarkierungen"></td>
+<td><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaico1mdmtj30460460st.jpg" height="200px" title="禁止泊车" alt="Grenzmarkierungen"></td>
+</tr>
+</tbody></table>
 
           
         
@@ -448,6 +550,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  285
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
           
 
           
@@ -610,6 +743,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7
+                </span>
+              
+            </div>
+          
 
           
 
@@ -644,170 +808,6 @@
 <p>随着研究的不断深入，基于深度学习的方法发展出了两种不同的方向。 第一种是以RCNN, Fast RCNN，Faster RCNN为代表的两阶段模型(two stage frameworks)，又称作基于区域模型(region based frameworks)。该方法遵循传统的目标检测流程，首先生成候选区域(region proposal)，然后根据所提取的特征将这些候选区域分为不同的类别。 第二种是基于分类/回归的一步框架，它可以直接从图像的像素映射到边界框坐标和类别的概率。通过这种方法可以大大降低时间开销。其代表模型有： Yolo, SSD。</p>
 <h3 id="One-stage-Model"><a href="#One-stage-Model" class="headerlink" title="One stage Model"></a>One stage Model</h3><p>随着上一小节提到的RCNN，Fast R-CNN, Faster R-CNN等论文对两阶段模型的潜力的发掘，两阶段模型的检测精度不断的提高。 但同时由于两阶段模型需要先生成区域候选的步骤，其检测速度成为了限制其性能的瓶颈，并且由于其计算成本的问题，使其也难以应用到性能比较中庸的穿戴设备或移动设备中去。 为了解决这一问题，研究人员提出了一种新的统一的检测架构，其不同于two Stage modeld的架构，该统一架构的不需要生成区域预选，直接从整幅图像上预测目标的边界框坐标和类别概率。通过这种方法大大提高了检测的速度。该架构被称作One Stage Model.</p>
 <h3 id="R-CNN"><a href="#R-CNN" class="headerlink" title="R-CNN"></a>R-CNN</h3><p>在R-CNN出现之前，最成功的目标检测模型是DPM，其在VOC数据集上的最佳表现是mAP 34.3%左右，但是Ross Girshick在2013年提出的R-CNN方法将这个</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/28/Theme_hueman/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Andre">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/28/Theme_hueman/" itemprop="url">Hueman主题的折腾之路</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-28T00:00:00+01:00">
-                2019-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%AF%E4%B8%9A/" itemprop="url" rel="index">
-                    <span itemprop="name">术业</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Hueman主题的安装"><a href="#Hueman主题的安装" class="headerlink" title="Hueman主题的安装"></a>Hueman主题的安装</h2><p>虽然网上各种博客的教程大多使用的都是Next主题，但是个人审美上还是对Next的风格接受不能，Hueman才是我心目中的博客风格应有的样子。下面就介绍一下Hueman主题的使用步骤：</p>
-<ol>
-<li>手动下载<a href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener" title="下载地址">Hueman主题</a>，或者将主题Clone到本地 ../themes 目录下 <code>git clone https://github.com/ppoffice/hexo-theme-hueman.git</code></li>
-<li>在Hexo文件目录下打开<strong>_config.xml</strong>文件，找到关键词 <strong>theme</strong> 将主题名称修改为：<strong>hexo-theme-hueman</strong></li>
-<li>在<strong>\Hexo\themes\hexo-theme-hueman</strong>目录下找到<strong>_config.xml.example</strong>文件，将后缀<strong>.example</strong>去掉</li>
-<li>在Hexo文件目录下打开git bash，依次执行 <code>git clean</code> 和 <code>git g -d</code>，将Hueman主题成功提交到Gitpage. 打开博客网址即可看到主题效果。</li>
-</ol>
-<h2 id="Hueman主题基本配置"><a href="#Hueman主题基本配置" class="headerlink" title="Hueman主题基本配置"></a>Hueman主题基本配置</h2><p>theme: 后面改为hueman</p>
-<h3 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h3><p>language: 后面改为zh-CN</p>
-<h3 id="修改title"><a href="#修改title" class="headerlink" title="修改title"></a>修改title</h3><p>这个会在你主页上，显示在浏览器框中的网页名称</p>
-<h3 id="修改subtitle副标题"><a href="#修改subtitle副标题" class="headerlink" title="修改subtitle副标题"></a>修改subtitle副标题</h3><p>博客logo边上的文字说明</p>
-<h3 id="修改author"><a href="#修改author" class="headerlink" title="修改author"></a>修改author</h3><p>author: 后面添加你自己的名字（这个将在网页的底部显示）</p>
-<h3 id="添加about页面"><a href="#添加about页面" class="headerlink" title="添加about页面"></a>添加about页面</h3><p>在Hexo文件目录下的打开git bash 输入以下代码：<br><code>hexo new page &quot;about&quot;</code></p>
-<h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p>Hueman支持多种评论系统，但有些目前已经停止服务，有些在国内被墙了，比如以前很喜欢用disqus，可惜国内并不支持。最近发现gitalk比较好用，因此打算将评论系统改成gitalk。</p>
-<p><strong>Hueman主题下配置Gitalk</strong><br>在Hueman主题下配置Gitalk的基本方法如下：</p>
-<ol>
-<li>设置github认证： 登陆github, 在个人账号下选择Setting, 然后选择developer setting, 接着选择OAuth Apps在该界面下选择新建Github App.其中Homepage URL和Authorization callback URL都必须是一样的，比如我个人github的博客地址<a href="https://andrelyl.github.io/" target="_blank" rel="noopener">https://andrelyl.github.io/</a> 。然后点击保存，记下Client ID和 Client Secret。</li>
-<li>打开Hueman的主题配置文件_config.yml，在gitalk部分填写相关信息：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">	on: true  					 </span><br><span class="line">	owner: 			# Github user name 					</span><br><span class="line">	repo: 			# url个人博客的			</span><br><span class="line">	client_id: 		# 上一步得到的Client ID		</span><br><span class="line">	client_secret: 	# 填写上一步得到的Client Secret	</span><br><span class="line">	admin: 			# GitHub repo owner and collaborators who can initialize github issues</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>部署到Github上                            </li>
-</ol>
 
           
         
@@ -930,6 +930,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  575
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
           
 
           
@@ -1309,6 +1340,201 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/28/Theme_hueman/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/28/Theme_hueman/" itemprop="url">Hueman主题的折腾之路</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-28T00:00:00+01:00">
+                2019-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%AF%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">术业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  552
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Hueman主题的安装"><a href="#Hueman主题的安装" class="headerlink" title="Hueman主题的安装"></a>Hueman主题的安装</h2><p>虽然网上各种博客的教程大多使用的都是Next主题，但是个人审美上还是对Next的风格接受不能，Hueman才是我心目中的博客风格应有的样子。下面就介绍一下Hueman主题的使用步骤：</p>
+<ol>
+<li>手动下载<a href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener" title="下载地址">Hueman主题</a>，或者将主题Clone到本地 ../themes 目录下 <code>git clone https://github.com/ppoffice/hexo-theme-hueman.git</code></li>
+<li>在Hexo文件目录下打开<strong>_config.xml</strong>文件，找到关键词 <strong>theme</strong> 将主题名称修改为：<strong>hexo-theme-hueman</strong></li>
+<li>在<strong>\Hexo\themes\hexo-theme-hueman</strong>目录下找到<strong>_config.xml.example</strong>文件，将后缀<strong>.example</strong>去掉</li>
+<li>在Hexo文件目录下打开git bash，依次执行 <code>git clean</code> 和 <code>git g -d</code>，将Hueman主题成功提交到Gitpage. 打开博客网址即可看到主题效果。</li>
+</ol>
+<h2 id="Hueman主题基本配置"><a href="#Hueman主题基本配置" class="headerlink" title="Hueman主题基本配置"></a>Hueman主题基本配置</h2><p>theme: 后面改为hueman</p>
+<h3 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h3><p>language: 后面改为zh-CN</p>
+<h3 id="修改title"><a href="#修改title" class="headerlink" title="修改title"></a>修改title</h3><p>这个会在你主页上，显示在浏览器框中的网页名称</p>
+<h3 id="修改subtitle副标题"><a href="#修改subtitle副标题" class="headerlink" title="修改subtitle副标题"></a>修改subtitle副标题</h3><p>博客logo边上的文字说明</p>
+<h3 id="修改author"><a href="#修改author" class="headerlink" title="修改author"></a>修改author</h3><p>author: 后面添加你自己的名字（这个将在网页的底部显示）</p>
+<h3 id="添加about页面"><a href="#添加about页面" class="headerlink" title="添加about页面"></a>添加about页面</h3><p>在Hexo文件目录下的打开git bash 输入以下代码：<br><code>hexo new page &quot;about&quot;</code></p>
+<h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p>Hueman支持多种评论系统，但有些目前已经停止服务，有些在国内被墙了，比如以前很喜欢用disqus，可惜国内并不支持。最近发现gitalk比较好用，因此打算将评论系统改成gitalk。</p>
+<p><strong>Hueman主题下配置Gitalk</strong><br>在Hueman主题下配置Gitalk的基本方法如下：</p>
+<ol>
+<li>设置github认证： 登陆github, 在个人账号下选择Setting, 然后选择developer setting, 接着选择OAuth Apps在该界面下选择新建Github App.其中Homepage URL和Authorization callback URL都必须是一样的，比如我个人github的博客地址<a href="https://andrelyl.github.io/" target="_blank" rel="noopener">https://andrelyl.github.io/</a> 。然后点击保存，记下Client ID和 Client Secret。</li>
+<li>打开Hueman的主题配置文件_config.yml，在gitalk部分填写相关信息：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">	on: true  					 </span><br><span class="line">	owner: 			# Github user name 					</span><br><span class="line">	repo: 			# url个人博客的			</span><br><span class="line">	client_id: 		# 上一步得到的Client ID		</span><br><span class="line">	client_secret: 	# 填写上一步得到的Client Secret	</span><br><span class="line">	admin: 			# GitHub repo owner and collaborators who can initialize github issues</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>部署到Github上                            </li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/work/002.ISO26262/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1383,6 +1609,37 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  779
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
           
 
           
@@ -1547,6 +1804,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  5
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1613,7 +1901,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Hobby/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Andre">
@@ -1632,7 +1920,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/" itemprop="url">大学时光纪念-雪中石大360全景</a></h1>
+                <a class="post-title-link" href="/2019/02/20/Hobby/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/" itemprop="url">大学时光纪念-青岛</a></h1>
         
 
         <div class="post-meta">
@@ -1688,6 +1976,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1706,12 +2025,19 @@
       
         
           
-            <h2 id="360全景图–石大雪景"><a href="#360全景图–石大雪景" class="headerlink" title="360全景图–石大雪景"></a>360全景图–石大雪景</h2><iframe src="https://720yun.com/t/955jOpuktk6" frameborder="no" width="700" height="500" ></iframe>
-
-
-
-
-
+            <h2 id="航拍照"><a href="#航拍照" class="headerlink" title="航拍照"></a>航拍照</h2><p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0cjgjs0baj31jk15o1ky.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckc3vtzsj33k02407wo.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0cjvy1bnyj31jk15okjl.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0cjzq6yr4j31jk1jk1ky.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck0kxmdgj31jk1jku0y.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck1ms3d4j31jk1jkb2a.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck4np25zj332w2b47wr.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck68o9baj32tt1l9e81.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck7nhfypj332w1qakjm.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckh6o1mpj30r20f6ael.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckhmsm28j30r20f6jvd.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckjwrlowj33341qinpf.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckm4tmtrj33341qi1l0.jpg" alt=""></p>
 
           
         
@@ -1835,6 +2161,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  11
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1902,7 +2259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Hobby/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Andre">
@@ -1921,7 +2278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/20/Hobby/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/" itemprop="url">大学时光纪念-青岛</a></h1>
+                <a class="post-title-link" href="/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/" itemprop="url">大学时光纪念-雪中石大360全景</a></h1>
         
 
         <div class="post-meta">
@@ -1977,6 +2334,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  8
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1995,19 +2383,12 @@
       
         
           
-            <h2 id="航拍照"><a href="#航拍照" class="headerlink" title="航拍照"></a>航拍照</h2><p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0cjgjs0baj31jk15o1ky.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckc3vtzsj33k02407wo.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0cjvy1bnyj31jk15okjl.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0cjzq6yr4j31jk1jk1ky.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck0kxmdgj31jk1jku0y.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck1ms3d4j31jk1jkb2a.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck4np25zj332w2b47wr.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck68o9baj32tt1l9e81.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck7nhfypj332w1qakjm.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckh6o1mpj30r20f6ael.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckhmsm28j30r20f6jvd.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckjwrlowj33341qinpf.jpg" alt=""></p>
-<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckm4tmtrj33341qi1l0.jpg" alt=""></p>
+            <h2 id="360全景图–石大雪景"><a href="#360全景图–石大雪景" class="headerlink" title="360全景图–石大雪景"></a>360全景图–石大雪景</h2><iframe src="https://720yun.com/t/955jOpuktk6" frameborder="no" width="700" height="500" ></iframe>
+
+
+
+
+
 
           
         
@@ -2159,6 +2540,15 @@
   <span class="author" itemprop="copyrightHolder">Andre</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">43.1k</span>
+  
 </div>
 
 
@@ -2170,7 +2560,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -2190,6 +2580,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -2333,5 +2725,5 @@
 
   
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
