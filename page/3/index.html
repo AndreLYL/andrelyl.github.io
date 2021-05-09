@@ -1,1099 +1,2705 @@
 <!DOCTYPE html>
-<html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
-    <meta charset="utf-8" />
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
-    
 
-    
-    <title>Hexo</title>
-    
-    <meta name="google-site-verification" content="_H3HWQECXL0s4W6UUnXesjCG6GwWs8lnt2mDes7_41Y" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta property="og:type" content="website">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Andre">
 <meta name="twitter:card" content="summary">
-    
-
-    
-        <link rel="alternate" href="/" title="Hexo" type="application/atom+xml" />
-    
-
-    
-
-    
-<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-    
-<link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-    
-<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-    
-<link rel="stylesheet" href="/css/style.css">
 
-
-    
-<script src="/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-
-    
-    
-        <script type="text/javascript">
-(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-156355099-1', 'auto');
-ga('send', 'pageview');
-
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
 </script>
 
-    
-    
+
+
+  <link rel="canonical" href="http://yoursite.com/page/3/"/>
+
+
+
+
+
+  <title>Hexo</title>
+  
+
+
+
+
+
+
 
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">The boy is no one</p>
-                        </h2>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">主页</a>
-                                </li>
-                            
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a></li></ul>
-                                    
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="/js/insight.js"></script>
-
-
-</div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
+  
+  
     
-    <em class="page-title-link" data-url="home">主页</em>
-    </h1>
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">The boy is no one</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-                        <div class="main-body-content">
-                            
+<nav class="site-nav">
+  
 
-    
-    
+  
+    <ul id="menu" class="menu">
+      
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2020" class="archive-year"><i class="icon fa fa-calendar-o"></i>2020</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2020/01/02/Markdown/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gay01tguhxj30go07s3yj.jpg)" alt="Markdown语法" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2020/01/02/Markdown/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a>
-            </div>
-            <div class="date"><time datetime="2020-01-01T23:00:00.000Z" itemprop="datePublished">2020-01-02</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2020/01/02/Markdown/">Markdown语法</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            图片并排显示注意插入图片的代码段放在同一行 
-123&lt;center class="half"&gt;   &lt;img src="图片地址" alt="图片说明" title="图片标题" width="50" height="50"&gt;&lt;img src="图片地址" alt="图片说明" title="图片标题" width="50" height="50"&gt;&lt;im
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2020/01/01/Major/05.NVIDIA/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gh8j2rcvqmj30rx0mrmyd.jpg)" alt="nvidia常用命令" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2020/01/01/Major/05.NVIDIA/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a>
-            </div>
-            <div class="date"><time datetime="2019-12-31T23:00:00.000Z" itemprop="datePublished">2020-01-01</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2020/01/01/Major/05.NVIDIA/">nvidia常用命令</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Nvidia相关命令
-nvidia-smi: 调用nvidia系统管理界面
-nvidia-smi -L： 列出所有GPU
-nvidia-smi -i 0： 查询特定卡的信息，0.1.2.为GPU编号
-nvidia-smi pmon： 监控线程
-nvidia-smi dmon： 监控设备
-nvidia-smi -q： 查询所有信息
-nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/12/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gafac10s13j30of0a810g.jpg)" alt="目标检测之方法论" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2019/12/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a>
-            </div>
-            <div class="date"><time datetime="2019-12-29T23:00:00.000Z" itemprop="datePublished">2019-12-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/12/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95/">目标检测之方法论</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            摘要目标检测是近些年来计算机视觉和数字图像处理的一个研究热点，它是图像处理和计算机视觉学科的重要分支，广泛应用于自动驾驶，机器人导航、智能视频监控、工业检测、航空航天等诸多领域。它的主要任务是检测已知的类别在图像中的实例，它包含物体定位和物体分类两个子任务，同时确定物体的类别和位置。传统的的目标检测算法通过区域选择，特征提取，分类三个步骤实现对物体的检测。随着深度学习技术的发展，目标检测算法采用不
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/12/28/German%20Driver's%20_license_words/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gae9l9alndj30c804q742.jpg)" alt="德国驾照备考：单词篇" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2019/12/28/German%20Driver&#39;s%20_license_words/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a>
-            </div>
-            <div class="date"><time datetime="2019-12-27T23:00:00.000Z" itemprop="datePublished">2019-12-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/12/28/German%20Driver's%20_license_words/">德国驾照备考：单词篇</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            动词
-
-
--
--
-
-
-
-vorbeifahren
-驶过，超车
-
-
-überfahren
-驶过，轧过
-
-
-abknicken
-急转弯，拐弯
-
-
-hochschalten
-换高速挡
-
-
-warmlaufen
-(内燃机)预热运转,空转
-
-
-beladen
-装货，装载
-
-
-entladen
-卸货，卸载
-
-
-entbinden
-解除，免除
-
-
-beteiligen
-参加，加入
-
-
-vorweisen
-表现出
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/12/28/Theme_hueman/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gaea68okn7j30sg0di41t.jpg)" alt="Hueman主题的折腾之路" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2019/12/28/Theme_hueman/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a>
-            </div>
-            <div class="date"><time datetime="2019-12-27T23:00:00.000Z" itemprop="datePublished">2019-12-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/12/28/Theme_hueman/">Hueman主题的折腾之路</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Hueman主题的安装虽然网上各种博客的教程大多使用的都是Next主题，但是个人审美上还是对Next的风格接受不能，Hueman才是我心目中的博客风格应有的样子。下面就介绍一下Hueman主题的使用步骤：
-
-手动下载Hueman主题，或者将主题Clone到本地 ../themes 目录下 git clone https://github.com/ppoffice/hexo-theme-hueman
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/05/05/work/002.ISO26262/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg)" alt="ISO26262标准" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2019/05/05/work/002.ISO26262/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a>
-            </div>
-            <div class="date"><time datetime="2019-05-04T22:00:00.000Z" itemprop="datePublished">2019-05-05</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/05/work/002.ISO26262/">ISO26262标准</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            ISO26262标准是什么随着汽车电气化程度的进一步提升，电子电气系统越来越集成和复杂，因此需要一些眼科的技术标准来规范汽车电子相关功能安全。
-ISO26262标准是汽车的电气/电子相关的“功能安全”标准。该标准制定于2011年11月，2018年发布了第二版，并追加了半导体指南。
-该标准是预先计算出汽车电控方面的故障风险，并把降低该风险的机制作为功能的一部分预先植入到系统当中，从而实现“功能安全”
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/03/01/Hobby/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeadkr4agj30fb0afwlu.jpg)" alt="Arduino超声波雷达" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2019/03/01/Hobby/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a>
-            </div>
-            <div class="date"><time datetime="2019-02-28T23:00:00.000Z" itemprop="datePublished">2019-03-01</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/01/Hobby/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE/">Arduino超声波雷达</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            超声波雷达
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/02/20/Hobby/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%B6%E6%97%B6%E6%91%84%E5%BD%B1/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeajoud08j30kt0ciweu.jpg)" alt="树莓派延时摄影" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2019/02/20/Hobby/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%B6%E6%97%B6%E6%91%84%E5%BD%B1/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a>
-            </div>
-            <div class="date"><time datetime="2019-02-19T23:00:00.000Z" itemprop="datePublished">2019-02-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/20/Hobby/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%B6%E6%97%B6%E6%91%84%E5%BD%B1/">树莓派延时摄影</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            树莓派延时摄影演示视频  
-
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/02/20/Hobby/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckhmsm28j30r20f6jvd.jpg)" alt="大学时光纪念-青岛" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2019/02/20/Hobby/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a>
-            </div>
-            <div class="date"><time datetime="2019-02-19T23:00:00.000Z" itemprop="datePublished">2019-02-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/20/Hobby/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/">大学时光纪念-青岛</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            航拍照
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeaig3l90j30nc0g5wn1.jpg)" alt="大学时光纪念-雪中石大360全景" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="http://yoursite.com/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a>
-            </div>
-            <div class="date"><time datetime="2019-02-19T23:00:00.000Z" itemprop="datePublished">2019-02-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/">大学时光纪念-雪中石大360全景</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            360全景图–石大雪景
-
-
-
-
-
-
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">第 3 页，共 4 页</span>
-        <a class="extend prev" rel="prev" href="/page/2/">&laquo;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">&raquo;</a>
-    </nav>
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>关注我 :</p>
-        <ul class="social-links">
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
             
-                
-                <li>
-                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-twitter"></i>
-                    </a>
-                </li>
-                
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-                
-                <li>
-                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yinglong.li.925" target="_blank" rel="noopener">
-                        <i class="icon fa fa-facebook"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="stack-overflow" href="https://github.com/AndreLYL" target="_blank" rel="noopener">
-                        <i class="icon fa fa-stack-overflow"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-rss"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-    <div class="widgets-container">
+            Home
+          </a>
+        </li>
+      
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
             
-                
-
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/09/work/005.FreeRTOS/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg)" alt="FreeRTOS学习笔记02" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2021/05/09/work/005.FreeRTOS/" class="title">FreeRTOS学习笔记02</a></p>
-                            <p class="item-date"><time datetime="2021-05-08T22:00:00.000Z" itemprop="datePublished">2021-05-09</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/07/work/004.RTOS/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg)" alt="FreeRTOS学习笔记01" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2021/05/07/work/004.RTOS/" class="title">FreeRTOS学习笔记01</a></p>
-                            <p class="item-date"><time datetime="2021-05-06T22:00:00.000Z" itemprop="datePublished">2021-05-07</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/03/work/003.Autosar/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://img-blog.csdnimg.cn/20190722153832837.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h5ZnhfZmh3,size_16,color_FFFFFF,t_70)" alt="work/003.Autosar" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/05/03/work/003.Autosar/" class="title">work/003.Autosar</a></p>
-                            <p class="item-date"><time datetime="2021-05-03T18:11:11.813Z" itemprop="datePublished">2021-05-03</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/03/work/Emmbed_system_QA/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg)" alt="嵌入式面试常见问题整理" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2021/05/03/work/Emmbed_system_QA/" class="title">嵌入式面试常见问题整理</a></p>
-                            <p class="item-date"><time datetime="2021-05-02T22:00:00.000Z" itemprop="datePublished">2021-05-03</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/05/01/work/001.c_basic/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://www.runoob.com/wp-content/uploads/2014/09/c-const-2021-01-15.png)" alt="C语言基础-嵌入式面试" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p>
-                            <p class="item-title"><a href="/2021/05/01/work/001.c_basic/" class="title">C语言基础-嵌入式面试</a></p>
-                            <p class="item-date"><time datetime="2021-04-30T22:00:00.000Z" itemprop="datePublished">2021-05-01</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%85%8E%E6%80%9D/">慎思</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%A9%E7%89%A9/">玩物</a><span class="category-list-count">5</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">归档</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">4</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">标签</h3>
-        <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apollo/" rel="tag">Apollo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blogs/" rel="tag">Blogs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/" rel="tag">CV</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Self-driving/" rel="tag">Self-driving</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tensorflow/" rel="tag">Tensorflow</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvidia/" rel="tag">nvidia</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-detection/" rel="tag">object detection</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/" rel="tag">photo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/point-cloud/" rel="tag">point cloud</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag">嵌入式</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BB%BA%E6%A8%A1/" rel="tag">建模</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" rel="tag">德国驾照</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%88%AA%E6%8B%8D/" rel="tag">航拍</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Apollo/" style="font-size: 10px;">Apollo</a> <a href="/tags/Blogs/" style="font-size: 16.67px;">Blogs</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/CV/" style="font-size: 16.67px;">CV</a> <a href="/tags/Self-driving/" style="font-size: 10px;">Self-driving</a> <a href="/tags/Tensorflow/" style="font-size: 10px;">Tensorflow</a> <a href="/tags/nvidia/" style="font-size: 10px;">nvidia</a> <a href="/tags/object-detection/" style="font-size: 13.33px;">object detection</a> <a href="/tags/photo/" style="font-size: 16.67px;">photo</a> <a href="/tags/point-cloud/" style="font-size: 13.33px;">point cloud</a> <a href="/tags/pytorch/" style="font-size: 10px;">pytorch</a> <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" style="font-size: 20px;">嵌入式</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 10px;">建模</a> <a href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/" style="font-size: 13.33px;">德国驾照</a> <a href="/tags/%E8%88%AA%E6%8B%8D/" style="font-size: 10px;">航拍</a>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
+            Tags
+          </a>
+        </li>
+      
         
-    </div>
-</aside>
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
 
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2021 Andre</p>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/Markdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
                 
-                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
-                
-            </div>
-<div>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-<span id="busuanzi_container_site_pv">
-    <p><center>本站总访问量:<span id="busuanzi_value_site_pv"></span>次</center></p>
-</span>
-<span id="busuanzi_container_site_uv">
-  <p><center>本站访客数: <span id="busuanzi_value_site_uv"></span>人次</center></p>
-</span>
-</div>
-            <div class="footer-plugins">
+                <a class="post-title-link" href="/2020/01/02/Markdown/" itemprop="url">Markdown语法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
               
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-02T00:00:00+01:00">
+                2020-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%AF%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">术业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  142
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
     
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-            </div>
-        </div>
+      
+      
+
+      
+        
+          
+            <h3 id="图片并排显示"><a href="#图片并排显示" class="headerlink" title="图片并排显示"></a>图片并排显示</h3><p>注意插入图片的代码段放在同一行 </p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span> <span class="attr">class</span>=<span class="string">"half"</span>&gt;</span></span></span><br><span class="line">   <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> <span class="attr">alt</span>=<span class="string">"图片说明"</span> <span class="attr">title</span>=<span class="string">"图片标题"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> <span class="attr">alt</span>=<span class="string">"图片说明"</span> <span class="attr">title</span>=<span class="string">"图片标题"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span>&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> <span class="attr">alt</span>=<span class="string">"图片说明"</span> <span class="attr">title</span>=<span class="string">"图片标题"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="给图片添加题注"><a href="#给图片添加题注" class="headerlink" title="给图片添加题注"></a>给图片添加题注</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">题注</span>](<span class="link">图片地址</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="指定图片的显示大小"><a href="#指定图片的显示大小" class="headerlink" title="指定图片的显示大小"></a>指定图片的显示大小</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片地址"</span> <span class="attr">alt</span>=<span class="string">"图片说明"</span> <span class="attr">title</span>=<span class="string">"图片标题"</span> <span class="attr">width</span>=<span class="string">"50"</span> <span class="attr">height</span>=<span class="string">"50"</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
     </div>
-</footer>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Major/05.NVIDIA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
 
         
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/Major/05.NVIDIA/" itemprop="url">nvidia常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+01:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%AF%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">术业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  285
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: 'b9ac5f0611abdbe3fa3a',
-        clientSecret: 'a336c5fbe85883f1c86fb1ddbcaef160fafbe8bb',
-        id: 'f07d317544dfba8c0701088fb2b33912',
-        repo: 'andrelyl.github.io',
-        owner: 'AndreLYL',
-        admin: "AndreLYL"
-    })
-    gitalk.render('comment-container')
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Nvidia相关命令"><a href="#Nvidia相关命令" class="headerlink" title="Nvidia相关命令"></a>Nvidia相关命令</h3><ul>
+<li>nvidia-smi: 调用nvidia系统管理界面</li>
+<li>nvidia-smi -L： 列出所有GPU</li>
+<li>nvidia-smi -i 0： 查询特定卡的信息，0.1.2.为GPU编号</li>
+<li>nvidia-smi pmon： 监控线程</li>
+<li>nvidia-smi dmon： 监控设备</li>
+<li>nvidia-smi -q： 查询所有信息</li>
+<li>nvidia-smi -l 3：持续监控gpu状态，每三秒刷新一次状态<br><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh8j2rcvqmj30rx0mrmyd.jpg" alt="nvidia-smi.png"></li>
+</ul>
+<h3 id="nvidia-smi-信息解读"><a href="#nvidia-smi-信息解读" class="headerlink" title="nvidia-smi 信息解读"></a>nvidia-smi 信息解读</h3><p><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gh8j3cctcdj31f50od4qp.jpg" alt="20200729_204726000_iOS.jpg"></p>
+<ul>
+<li>Fan：风扇转速，从0到100%之间变动，这个速度是计算机期望的风扇转速，实际情况下如果风扇堵转，可能打不到显示的转速。有的设备不会返回转速，因为它不依赖风扇冷却而是通过其他外设保持低温</li>
+<li>Temp：温度，单位摄氏度。</li>
+<li>Perf：性能状态，从P0到P12，P0表示最大性能，P12表示状态最小性能。</li>
+<li>Pwr：能耗，上方的Persistence-M：是持续模式的状态，持续模式虽然耗能大，但是在新的GPU应用启动时，花费的时间更少。</li>
+<li>Bus-Id：GPU总线，domain:bus:device.function</li>
+<li>Disp.A：Display Active，表示GPU的显示是否初始化。</li>
+<li>Memory Usage：显存使用率。</li>
+<li>Compute M：是计算模式。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/30/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95/" itemprop="url">目标检测之方法论</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-30T00:00:00+01:00">
+                2019-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%AF%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">术业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>目标检测是近些年来计算机视觉和数字图像处理的一个研究热点，它是图像处理和计算机视觉学科的重要分支，广泛应用于自动驾驶，机器人导航、智能视频监控、工业检测、航空航天等诸多领域。它的主要任务是检测已知的类别在图像中的实例，它包含物体定位和物体分类两个子任务，同时确定物体的类别和位置。传统的的目标检测算法通过区域选择，特征提取，分类三个步骤实现对物体的检测。随着深度学习技术的发展，目标检测算法采用不同的深度学习网络来提高目标检测技术的速度和准确度。它可以分为 one stage, two stage 和 multi stage 三种类别。在这里本文主要回顾了目标检测的经典算法, 主要包括R-CNN, Fast R-CNN, Faster R-CNN。并采用已知的数据对这些算法的识别速度和检测精度进行了横向比较，并总结了不同算法的特点和应用范围。  </p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>另一方面，由于卷积神经网络在目标检测领域的应用，使得基于深度学习的目标检测方法在近些年来发展十分迅速。2013年，Ross Girshick等人提出了R-CNN网络，首次CNN方法引入目标检测领域，大大提高了目标检测效果，同时改变了目标检测领域的主要研究思路。2015年，</p>
+<h2 id="传统目标检测方法"><a href="#传统目标检测方法" class="headerlink" title="传统目标检测方法"></a>传统目标检测方法</h2><p><strong>区域选择：</strong><br><strong>特征提取：</strong><br><strong>分类：</strong>分类的目的是将图片用一种层次化的方法进行表述。在上一步中所提取的候选区域的特征将被送到分类器，分类器采用适当的算法对其进行分类，用事先确定好的类别和实例ID来描述图片。传统目标检测采用的分类器算法有：SVM，Adaboost，DPM等。</p>
+<p>根据目标检测具体的应用场景，研究人员对以上三个步骤的具体算法做了各种各样的改进，以实现更高的准确率与更快检测速度。 在过去的20年里，研究人员在传统目标检测领域做了很多的研究，提出了一些可以看做里程碑式的经典算法，如图二所示，接下来我们将按照时间顺序介绍一些传统目标检测领域的重要算法。</p>
+<h3 id="Haar-like特征-Adaboost"><a href="#Haar-like特征-Adaboost" class="headerlink" title="Haar-like特征 + Adaboost"></a>Haar-like特征 + Adaboost</h3><p>2001年，Viola和Jones提出了用于人脸识别的目标检测算法，这种算法大大提高了人脸检测的效率和精度。该算法主要基于三个重要步骤：Haar-like特征，Adaboost分类和Cascade级联分类器</p>
+<p>论文采用了最简单的矩形特征作为Feature descripter, 作者创新性的提出了积分图的概念。该图像和原图像大小相同，其每个位置的值为像素点左上所有像素点之和。 采用这张积分图，使得计算任意矩形区域的特征值的运算可以通过矩形框四角的所对应的值相加减得到（见图2）</p>
+<p>首先论文采用了哈尔矩形特征作为Feature descripter. 该特征通过计算矩形明暗区域的像素和差值来描述区域的特征。作者创新性的提出了积分图的方法来简化运算，该图像和原图像大小相同，其每个位置的值为像素点左上所有像素点之和。 采用该图可以使任意矩形区域的特征值通过积分图上矩形四个顶点的值进行运算，这大大降低了计算负担。<br>其次，</p>
+<h3 id="HoG-SVM"><a href="#HoG-SVM" class="headerlink" title="HoG + SVM"></a>HoG + SVM</h3><p>HOG descripter是传统目标检测领域的重要的里程碑，它在SIFT，和形状上下文的基础上，在均匀建个的单元格密集网络上使用</p>
+<p><strong>特征提取链：</strong> 输入图像首先被分成许多小的空间区域（6<em>16像素块，四个 8</em>8 的像素单元），通过收集像素中每个像素的梯度和边缘方向 可以计算一维面向梯度的直方图。 但是由于局部照明的差异以及前景和背景的对比度，梯度强度变化的范围非常大，因此需要对梯度的局部对比度进行归一化。 需要进行对比度归一化的步骤，以使描述符对光照，阴影和边缘变化具有鲁棒性。 然后，将规范化描述符（HOG描述符）填充到密集网格中的检测窗口中，并将由HOG描述符形成的特征向量放入线性SVM分类器中以实现二进制分类。 最后，检测窗口扫描输入图像的多尺度图像金字塔，通过非最大抑制来检测物体。在分类器的训练过程中，dalal等人采用一个两步的训练方法，使得误检率减少了5% 。</p>
+<h3 id="DPM-LSVM"><a href="#DPM-LSVM" class="headerlink" title="DPM + LSVM"></a>DPM + LSVM</h3><p>值得一提的是，Dalal的论文所提出的HOG+SVM方法采用固定的模板来提取HOG特征，这种方法对于无法处理目标的形变问题。 2008年，P. Felzenswalb在HOG特征的基础上提出了DPM+LSVM的方法，这种方法在由HOG特征生成的金字塔上，采用一个粗略的模板来涵盖物体，和一个精细的模板来检测物体的可形变部分。 通过这种方法，作者在2007 PASCAL挑战赛的20个类别中的十个类别获得最佳结果。并且检测精度是2006 PASCAL冠军的两倍。作者也因此在2010年获得 PASCAL VOC的终身成就奖</p>
+<p>*<em>系统概述: *</em>基于滑动窗口法，该目标检测系统由一个root filter和多个part models组成.</p>
+<h2 id="基于深度学习的目标检测方法"><a href="#基于深度学习的目标检测方法" class="headerlink" title="基于深度学习的目标检测方法"></a>基于深度学习的目标检测方法</h2><p>1998年，Yann LeCun提出了LeNet-5的网络结构，该结构可以端到端训练模型以进行文档检测。 它成为最经典的CNN结构，以后的大部分CNN模型都源自此版本。 2012年，Kriszhevsky等人在物体检测领域采用了基于CNN的方法。 在2014年，Ross Girshick等人。 提出的R-CNN，其出色的性能吸引了研究人员的注意。 从那时起，深度学习成为对象检测领域的一个热点。</p>
+<p>与具有手工功能的传统方法相比，基于CNN的方法可以更分层和更深入地表示特征。 典型的CNN结构由具有特征图的许多层组成。 特征图中的像素（神经元）通过权重连接到先前的特征图。 可以通过具有共享权重的卷积核从上一层的局部区域中获取每一层的特征。 输入图像将在网络中重复计算，低级特征将在初始层中计算，而高级特征则可在后续层中提取。 结果上，模型的表达能力将通过CNN结构得到了指数级的提高。 特征可以以较高的语义层面来表达。</p>
+<p>随着研究的不断深入，基于深度学习的方法发展出了两种不同的方向。 第一种是以RCNN, Fast RCNN，Faster RCNN为代表的两阶段模型(two stage frameworks)，又称作基于区域模型(region based frameworks)。该方法遵循传统的目标检测流程，首先生成候选区域(region proposal)，然后根据所提取的特征将这些候选区域分为不同的类别。 第二种是基于分类/回归的一步框架，它可以直接从图像的像素映射到边界框坐标和类别的概率。通过这种方法可以大大降低时间开销。其代表模型有： Yolo, SSD。</p>
+<h3 id="One-stage-Model"><a href="#One-stage-Model" class="headerlink" title="One stage Model"></a>One stage Model</h3><p>随着上一小节提到的RCNN，Fast R-CNN, Faster R-CNN等论文对两阶段模型的潜力的发掘，两阶段模型的检测精度不断的提高。 但同时由于两阶段模型需要先生成区域候选的步骤，其检测速度成为了限制其性能的瓶颈，并且由于其计算成本的问题，使其也难以应用到性能比较中庸的穿戴设备或移动设备中去。 为了解决这一问题，研究人员提出了一种新的统一的检测架构，其不同于two Stage modeld的架构，该统一架构的不需要生成区域预选，直接从整幅图像上预测目标的边界框坐标和类别概率。通过这种方法大大提高了检测的速度。该架构被称作One Stage Model.</p>
+<h3 id="R-CNN"><a href="#R-CNN" class="headerlink" title="R-CNN"></a>R-CNN</h3><p>在R-CNN出现之前，最成功的目标检测模型是DPM，其在VOC数据集上的最佳表现是mAP 34.3%左右，但是Ross Girshick在2013年提出的R-CNN方法将这个</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/28/German%20Driver's%20_license_words/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/28/German%20Driver's%20_license_words/" itemprop="url">德国驾照备考：单词篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-28T00:00:00+01:00">
+                2019-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%AF%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">术业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  575
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h2><table>
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>vorbeifahren</td>
+<td>驶过，超车</td>
+</tr>
+<tr>
+<td>überfahren</td>
+<td>驶过，轧过</td>
+</tr>
+<tr>
+<td>abknicken</td>
+<td>急转弯，拐弯</td>
+</tr>
+<tr>
+<td>hochschalten</td>
+<td>换高速挡</td>
+</tr>
+<tr>
+<td>warmlaufen</td>
+<td>(内燃机)预热运转,空转</td>
+</tr>
+<tr>
+<td>beladen</td>
+<td>装货，装载</td>
+</tr>
+<tr>
+<td>entladen</td>
+<td>卸货，卸载</td>
+</tr>
+<tr>
+<td>entbinden</td>
+<td>解除，免除</td>
+</tr>
+<tr>
+<td>beteiligen</td>
+<td>参加，加入</td>
+</tr>
+<tr>
+<td>vorweisen</td>
+<td>表现出，出示</td>
+</tr>
+<tr>
+<td>verrutschen</td>
+<td>打滑，滑落</td>
+</tr>
+</tbody></table>
+<h2 id="形容词"><a href="#形容词" class="headerlink" title="形容词"></a>形容词</h2><table>
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>zügig</td>
+<td>迅速的,流畅的</td>
+</tr>
+<tr>
+<td>mäßig</td>
+<td>适度的,适中的,适当的</td>
+</tr>
+<tr>
+<td>grobstollig</td>
+<td>高凸块花纹的</td>
+</tr>
+<tr>
+<td>niedertourig</td>
+<td>低转速的</td>
+</tr>
+<tr>
+<td>fachgerecht</td>
+<td>专业的</td>
+</tr>
+<tr>
+<td>bergab</td>
+<td>向下，下坡 adv</td>
+</tr>
+<tr>
+<td>hektisch</td>
+<td>慌忙的，仓促的</td>
+</tr>
+<tr>
+<td>rasant</td>
+<td>迅速的，飞快的</td>
+</tr>
+<tr>
+<td>ausgeglich</td>
+<td>均衡的</td>
+</tr>
+<tr>
+<td>unverzüglich</td>
+<td>刻不容缓的，立即的，马上的</td>
+</tr>
+<tr>
+<td>entbehrlich</td>
+<td>可有可无的，非必要的</td>
+</tr>
+<tr>
+<td>vorausschauend</td>
+<td>adv. 前瞻性的，有远见的，有先见之明的</td>
+</tr>
+<tr>
+<td>funktionstüchtig</td>
+<td>作用良好的,能运转的</td>
+</tr>
+<tr>
+<td>vorschriftsmäßig</td>
+<td>合乎规定的,按照规定的</td>
+</tr>
+<tr>
+<td>veischneit</td>
+<td>积雪的，白雪覆盖的</td>
+</tr>
+</tbody></table>
+<h2 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h2><table>
+<thead>
+<tr>
+<th>-</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>das Schienenfahrzeug</td>
+<td>有轨机动车，铁道机车</td>
+</tr>
+<tr>
+<td>das Einsatzfahrzeug</td>
+<td>紧急任务车辆</td>
+</tr>
+<tr>
+<td>der Abschleppwagen</td>
+<td>拖吊车，救助牵引车</td>
+</tr>
+<tr>
+<td>der Streifenwagen</td>
+<td>(警察)巡逻车</td>
+</tr>
+<tr>
+<td>die Fahne -n</td>
+<td>旗，旗帜</td>
+</tr>
+<tr>
+<td>der Tunnel -</td>
+<td>隧道</td>
+</tr>
+<tr>
+<td>der Zebrastreifen</td>
+<td>斑马线, 人行横道</td>
+</tr>
+<tr>
+<td>der Reißverschlussverfahren</td>
+<td>拉链式并道方法</td>
+</tr>
+<tr>
+<td>die Sackgasse -n</td>
+<td>死胡同</td>
+</tr>
+<tr>
+<td>die Unterführung</td>
+<td>地下通道，隧道</td>
+</tr>
+<tr>
+<td>die Umleitung</td>
+<td>交通改道，绕行</td>
+</tr>
+<tr>
+<td>das Standlicht</td>
+<td>停车灯，驻车灯</td>
+</tr>
+<tr>
+<td>das Abblendlicht</td>
+<td>近光灯</td>
+</tr>
+<tr>
+<td>die Panne</td>
+<td>故障，事故，损失，崩溃，漏洞</td>
+</tr>
+<tr>
+<td>die Zollstelle</td>
+<td>关卡，关税检查站</td>
+</tr>
+<tr>
+<td>das Gefahrgutfahrzeug</td>
+<td>危险货运汽车</td>
+</tr>
+<tr>
+<td>die Umweltschonung</td>
+<td>环保</td>
+</tr>
+<tr>
+<td>die Einspritzanlage</td>
+<td>喷射装置，喷射设备</td>
+</tr>
+<tr>
+<td>die unterschreitung</td>
+<td>低于额定，下降</td>
+</tr>
+<tr>
+<td>der Reifenabrieb</td>
+<td>轮胎磨损</td>
+</tr>
+<tr>
+<td>der Schalldämpfer</td>
+<td>消音装置</td>
+</tr>
+<tr>
+<td>der Schmierstoff</td>
+<td>润滑油</td>
+</tr>
+<tr>
+<td>die Entsorgung</td>
+<td>排除，清除</td>
+</tr>
+<tr>
+<td>die Bahnschranke</td>
+<td>铁路道口栅栏，拦道木</td>
+</tr>
+<tr>
+<td>der Bahnübergang</td>
+<td>铁路交叉道口</td>
+</tr>
+<tr>
+<td>der Lokführer</td>
+<td>火车司机</td>
+</tr>
+<tr>
+<td>der Leichtlauföl</td>
+<td>轻质汽油</td>
+</tr>
+<tr>
+<td>die Auspuffsanlage</td>
+<td>排气装置</td>
+</tr>
+<tr>
+<td>der Gang</td>
+<td>档位</td>
+</tr>
+<tr>
+<td>die Fahrweise</td>
+<td>(汽车司机的)<strong>行车方式</strong>(尤指对待行人、骑车人或同行的态度)</td>
+</tr>
+<tr>
+<td>das Kondenswasser</td>
+<td>冷凝水</td>
+</tr>
+<tr>
+<td>der Verschleiß</td>
+<td>磨损，损耗</td>
+</tr>
+<tr>
+<td>der Qualm</td>
+<td>浓烟</td>
+</tr>
+<tr>
+<td>das Einsatzhorn</td>
+<td>警报声，汽笛声</td>
+</tr>
+<tr>
+<td>die Fliekraft</td>
+<td>离心力</td>
+</tr>
+<tr>
+<td>der Fahrtwind</td>
+<td>迎面风，气流</td>
+</tr>
+<tr>
+<td>die Geschädigte</td>
+<td>受害者</td>
+</tr>
+<tr>
+<td>der Transponder</td>
+<td>发射应答器，应答器</td>
+</tr>
+<tr>
+<td>die Autobahnraststätte</td>
+<td>高速公路休息处</td>
+</tr>
+<tr>
+<td>die Notrufsäule</td>
+<td>(高速公路旁)紧急救援电话(柱)</td>
+</tr>
+<tr>
+<td>der Leitpfosten</td>
+<td>导向柱</td>
+</tr>
+<tr>
+<td>die Leitplanke</td>
+<td>(公路两旁的)护栏,安全栏,护板</td>
+</tr>
+<tr>
+<td>das Rufzeichen</td>
+<td>呼叫信号，呼叫音</td>
+</tr>
+<tr>
+<td>die Bake</td>
+<td>浮标,航标,路标</td>
+</tr>
+<tr>
+<td>der Schachtdeckel</td>
+<td>窨井盖</td>
+</tr>
+<tr>
+<td>die Lackierung</td>
+<td>油漆，喷漆</td>
+</tr>
+</tbody></table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/28/Theme_hueman/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/28/Theme_hueman/" itemprop="url">Hueman主题的折腾之路</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-28T00:00:00+01:00">
+                2019-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%AF%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">术业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  552
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Hueman主题的安装"><a href="#Hueman主题的安装" class="headerlink" title="Hueman主题的安装"></a>Hueman主题的安装</h2><p>虽然网上各种博客的教程大多使用的都是Next主题，但是个人审美上还是对Next的风格接受不能，Hueman才是我心目中的博客风格应有的样子。下面就介绍一下Hueman主题的使用步骤：</p>
+<ol>
+<li>手动下载<a href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener" title="下载地址">Hueman主题</a>，或者将主题Clone到本地 ../themes 目录下 <code>git clone https://github.com/ppoffice/hexo-theme-hueman.git</code></li>
+<li>在Hexo文件目录下打开<strong>_config.xml</strong>文件，找到关键词 <strong>theme</strong> 将主题名称修改为：<strong>hexo-theme-hueman</strong></li>
+<li>在<strong>\Hexo\themes\hexo-theme-hueman</strong>目录下找到<strong>_config.xml.example</strong>文件，将后缀<strong>.example</strong>去掉</li>
+<li>在Hexo文件目录下打开git bash，依次执行 <code>git clean</code> 和 <code>git g -d</code>，将Hueman主题成功提交到Gitpage. 打开博客网址即可看到主题效果。</li>
+</ol>
+<h2 id="Hueman主题基本配置"><a href="#Hueman主题基本配置" class="headerlink" title="Hueman主题基本配置"></a>Hueman主题基本配置</h2><p>theme: 后面改为hueman</p>
+<h3 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h3><p>language: 后面改为zh-CN</p>
+<h3 id="修改title"><a href="#修改title" class="headerlink" title="修改title"></a>修改title</h3><p>这个会在你主页上，显示在浏览器框中的网页名称</p>
+<h3 id="修改subtitle副标题"><a href="#修改subtitle副标题" class="headerlink" title="修改subtitle副标题"></a>修改subtitle副标题</h3><p>博客logo边上的文字说明</p>
+<h3 id="修改author"><a href="#修改author" class="headerlink" title="修改author"></a>修改author</h3><p>author: 后面添加你自己的名字（这个将在网页的底部显示）</p>
+<h3 id="添加about页面"><a href="#添加about页面" class="headerlink" title="添加about页面"></a>添加about页面</h3><p>在Hexo文件目录下的打开git bash 输入以下代码：<br><code>hexo new page &quot;about&quot;</code></p>
+<h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p>Hueman支持多种评论系统，但有些目前已经停止服务，有些在国内被墙了，比如以前很喜欢用disqus，可惜国内并不支持。最近发现gitalk比较好用，因此打算将评论系统改成gitalk。</p>
+<p><strong>Hueman主题下配置Gitalk</strong><br>在Hueman主题下配置Gitalk的基本方法如下：</p>
+<ol>
+<li>设置github认证： 登陆github, 在个人账号下选择Setting, 然后选择developer setting, 接着选择OAuth Apps在该界面下选择新建Github App.其中Homepage URL和Authorization callback URL都必须是一样的，比如我个人github的博客地址<a href="https://andrelyl.github.io/" target="_blank" rel="noopener">https://andrelyl.github.io/</a> 。然后点击保存，记下Client ID和 Client Secret。</li>
+<li>打开Hueman的主题配置文件_config.yml，在gitalk部分填写相关信息：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">	on: true  					 </span><br><span class="line">	owner: 			# Github user name 					</span><br><span class="line">	repo: 			# url个人博客的			</span><br><span class="line">	client_id: 		# 上一步得到的Client ID		</span><br><span class="line">	client_secret: 	# 填写上一步得到的Client Secret	</span><br><span class="line">	admin: 			# GitHub repo owner and collaborators who can initialize github issues</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>部署到Github上                            </li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/work/002.ISO26262/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/05/work/002.ISO26262/" itemprop="url">ISO26262标准</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-05T00:00:00+02:00">
+                2019-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%AF%E4%B8%9A/" itemprop="url" rel="index">
+                    <span itemprop="name">术业</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  779
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="ISO26262标准是什么"><a href="#ISO26262标准是什么" class="headerlink" title="ISO26262标准是什么"></a>ISO26262标准是什么</h3><p>随着汽车电气化程度的进一步提升，电子电气系统越来越集成和复杂，因此需要一些眼科的技术标准来规范汽车电子相关功能安全。</p>
+<p>ISO26262标准是汽车的电气/电子相关的“功能安全”标准。该标准制定于2011年11月，2018年发布了第二版，并追加了半导体指南。</p>
+<p>该标准是预先计算出汽车电控方面的故障风险，并把降低该风险的机制作为功能的一部分预先植入到系统当中，从而实现“功能安全”的标准化开发工艺。ISO26262标准的对象涵盖从车辆构思到系统，ECU(电子控制单元)，嵌入式软件，元器件开发及相关的生产、维护、报废等整个车辆的开发周期。<br><img src="https://www.21ic.com/uploads/21/5f28c2704a418.png" alt="ISO26262的具体规范内容"></p>
+<h3 id="ISO26262功能安全定义"><a href="#ISO26262功能安全定义" class="headerlink" title="ISO26262功能安全定义"></a>ISO26262功能安全定义</h3><p><strong>本质安全和功能安全：</strong> 本质安全是一种通过消除危险的原因来确保安全的方法，通过改变机器设备，人为，环境等因素彻底消除诱因。而功能安全是通过一个有效的改善方法，在功能上确保可容忍范围的安全，即将风险降低到可接受的水平来确保安全。</p>
+<p><strong>ISO26262功能安全定义</strong></p>
+<ul>
+<li>Absence of unreasonable risk due to hazards caused by malfunctioning behavior of E/E systems.</li>
+<li>没有由电子，电气系统故障行为导致的危险所引起的不合理的风险。</li>
+</ul>
+<p>这段话的理解是不存在<strong>由电子电气系统的功能异常表现</strong>引起的危害而导致不合理的风险。比如，汽车正常行驶情况下安全气囊打开，这种功能异常是不合理的，也会带来安全方面的风险。这就是功能安全所需要避免的问题。总体来说，功能安全是指避免由系统功能性故障导致的不可接受的风险，<strong>它关注的是系统发生故障之后的行为，而不是系统的原有功能和性能。</strong>因此功能安全的目的就是<strong>当系统发生故障后，使系统进入安全的可控模式，避免对人身，财产造成伤害。</strong></p>
+<h3 id="ISO26262适用范围"><a href="#ISO26262适用范围" class="headerlink" title="ISO26262适用范围"></a>ISO26262适用范围</h3><ul>
+<li>This document is intended to be applied to safety-related systems that include one or more electrical and/or eletronic (E/E) systems and that are installed in series production road vehicles, excluding mopeds. This docement does not address unique E/E systems in special vehicles such as E/E systems designed for driver with disabilities.(ISO26262-2018)</li>
+</ul>
+<p>即该标准适用于所有的汽车、电动车。但是不包括轻便摩托车和特种车。</p>
+<h3 id="ISO26262的内容"><a href="#ISO26262的内容" class="headerlink" title="ISO26262的内容"></a>ISO26262的内容</h3><p>该功能安全标准主要包含了：</p>
+<ol>
+<li>指导我们如何量化产品的安全等级；</li>
+<li>知道我们如何根据不同的安全等级设计相应的安全措施</li>
+<li>指导我们如何规避/控制系统性的故障和随机故障</li>
+<li>知道我们如果管理功能安全(包括流程，技术分析方法等)</li>
+</ol>
+<p><img src="https://pic1.zhimg.com/80/v2-6bb59607c82205cfa40516698acc6380_720w.jpg" alt="ISO26262-2018"></p>
+<h2 id="自适应巡航控制-ACC-功能安全"><a href="#自适应巡航控制-ACC-功能安全" class="headerlink" title="自适应巡航控制(ACC)功能安全"></a>自适应巡航控制(ACC)功能安全</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/01/Hobby/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/01/Hobby/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE/" itemprop="url">Arduino超声波雷达</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-01T00:00:00+01:00">
+                2019-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%A9%E7%89%A9/" itemprop="url" rel="index">
+                    <span itemprop="name">玩物</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  5
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="超声波雷达"><a href="#超声波雷达" class="headerlink" title="超声波雷达"></a>超声波雷达</h1><iframe width="560" height="315" src="https://www.youtube.com/embed/52tgWnyOnSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Hobby/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/20/Hobby/%E9%9D%92%E5%B2%9B%E8%88%AA%E6%8B%8D%E7%85%A7/" itemprop="url">大学时光纪念-青岛</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-20T00:00:00+01:00">
+                2019-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%A9%E7%89%A9/" itemprop="url" rel="index">
+                    <span itemprop="name">玩物</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="航拍照"><a href="#航拍照" class="headerlink" title="航拍照"></a>航拍照</h2><p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0cjgjs0baj31jk15o1ky.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckc3vtzsj33k02407wo.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0cjvy1bnyj31jk15okjl.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0cjzq6yr4j31jk1jk1ky.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck0kxmdgj31jk1jku0y.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck1ms3d4j31jk1jkb2a.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck4np25zj332w2b47wr.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck68o9baj32tt1l9e81.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ck7nhfypj332w1qakjm.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckh6o1mpj30r20f6ael.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckhmsm28j30r20f6jvd.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckjwrlowj33341qinpf.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005y0DUGgy1g0ckm4tmtrj33341qi1l0.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/20/Hobby/%E9%9B%AA%E4%B8%AD%E7%9F%B3%E5%A4%A7360%E5%85%A8%E6%99%AF/" itemprop="url">大学时光纪念-雪中石大360全景</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-20T00:00:00+01:00">
+                2019-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%A9%E7%89%A9/" itemprop="url" rel="index">
+                    <span itemprop="name">玩物</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  8
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="360全景图–石大雪景"><a href="#360全景图–石大雪景" class="headerlink" title="360全景图–石大雪景"></a>360全景图–石大雪景</h2><iframe src="https://720yun.com/t/955jOpuktk6" frameborder="no" width="700" height="500" ></iframe>
+
+
+
+
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/Hobby/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%B6%E6%97%B6%E6%91%84%E5%BD%B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andre">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/20/Hobby/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BB%B6%E6%97%B6%E6%91%84%E5%BD%B1/" itemprop="url">树莓派延时摄影</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-20T00:00:00+01:00">
+                2019-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%A9%E7%89%A9/" itemprop="url" rel="index">
+                    <span itemprop="name">玩物</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  11
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="树莓派延时摄影"><a href="#树莓派延时摄影" class="headerlink" title="树莓派延时摄影"></a>树莓派延时摄影</h1><p>演示视频  </p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h1gNuZAHIhs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Andre</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Andre</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">43.1k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
 
 
 
-    
-        
-<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-share.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-video.min.js"></script>
-
-    
-    
-        
-<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-
-    
-    
-        <script type="text/x-mathjax-config">
-            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-        </script>
-        
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
-
-    
-
-    
 
 
 
-<!-- Custom Scripts -->
 
-<script src="/js/main.js"></script>
+  
 
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
