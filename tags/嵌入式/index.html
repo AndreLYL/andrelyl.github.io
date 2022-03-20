@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Tag: 嵌入式 - Hexo</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Hexo"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Hexo"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="Hexo"><meta property="og:url" content="http://example.com/"><meta property="og:site_name" content="Hexo"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:author" content="John Doe"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com"},"headline":"Hexo","image":["http://example.com/img/og_image.png"],"author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":""}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.1.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">嵌入式</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-05-08T16:00:00.000Z" title="5/9/2021, 12:00:00 AM">2021-05-09</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-05-10T01:50:06.000Z" title="5/10/2021, 9:50:06 AM">2021-05-10</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></span><span class="level-item">16 minutes read (About 2360 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/05/09/work/005.FreeRTOS/">FreeRTOS学习笔记02</a></h1><div class="content"><h2 id="FreeRTOS"><a href="#FreeRTOS" class="headerlink" title="FreeRTOS"></a>FreeRTOS</h2><p><strong>FreeRTOS</strong>是一个迷你的实时操作系统内核。作为一个轻量级的操作系统，功能包括：任务管理、时间管理、信号量、消息队列、内存管理、记录功能、软件定时器、协程等，可基本满足较小系统的需要。</p>
+<p>FreeRTOS是为小型嵌入式系统设计的可裁剪实时内核。其主要特点有：</p>
+<ul>
+<li>调度器支持抢占式调度，协助式调度，或者两者混合。时间片可选</li>
+<li>占用空间小，简单，易用</li>
+</ul>
+<h3 id="FreeRTOS的源码结构"><a href="#FreeRTOS的源码结构" class="headerlink" title="FreeRTOS的源码结构"></a>FreeRTOS的源码结构</h3><p>在FreeRTOS v9.0版本中，FreeRTOS的代码主要包含两个文件夹：FreeRTOS_CORE和FreeRTOS_PORTABLE。这两个文件夹下包含多个.C文件。</p>
+<ul>
+<li>port.c: 针对不同硬件平台的接口，定义与硬件接口相关的代码</li>
+<li>heap_4.c： 内存管理相关</li>
+<li>croutine.c：协程相关</li>
+<li>event_groups.c：事件标志组相关</li>
+<li>list.c：管理系统实际会应用到list，是FreeRTOS的一种基础数据结构</li>
+<li>tasks.c：任务创建、挂起、恢复、调度相关</li>
+<li>timers.c：软件定时器相关</li>
+<li>queue.c：管理tasks之间的通信(message queue的概念)</li>
+<li>FreeRTOSConfig.h：宏定义，配置RTOS所需要的资源</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/AndreLYL/BlogPictures/blog_files/img/20210508182833.png"></p>
+<h3 id="FreeRTOS的任务间通信机制"><a href="#FreeRTOS的任务间通信机制" class="headerlink" title="FreeRTOS的任务间通信机制"></a>FreeRTOS的任务间通信机制</h3><p>裸机编程中，一个复杂的功能通常需要多个子函数来实现，不同的子函数之间的通常采用一些全局变量来实现联系。在RTOS中，我们不仅可以使用全局变量，还可以采用系统自带的任务间通信机制。这种机制更加受推荐。其原因是：</p>
+<ol>
+<li>阻塞等待机制比轮询等待更加高效：全局变量当用作某种事件的标志是，获取该标志的任务需要轮询检测标志位的状态是否变化。这样会产生大量的无效判断。如果使用任务间通信阻塞等待的机制，CPU可以转而处理其他事情，当标志变化时解除阻塞。又可以及时执行后续的处理。</li>
+<li>全局变量会产生不可重入函数导致逻辑混乱：RTOS运行时，CPU需要调用不同的函数，如果全局变量使用不恰当，会导致原本设计的逻辑产生混乱。比如某个低优先级任务正在访问某个公共函数，并对函数中的全局变量进行了修改。还未退出函数时，更高优先级的任务抢占了CPU的使用权，并对该函数的全局变量进行了修改。此时低优先级任务若认为自己修改变量成功，执行后续逻辑时，就会发生错误。</li>
+</ol>
+<p>FreeRTOS任务间的通信方式：</p>
+<ul>
+<li>信号量(Semaphore): 用于任务间的同步，一个任务以阻塞方式灯带另一个任务释放信号量。</li>
+<li>互斥量(Mutex)：用于任务间共享资源的互斥访问，使用前获取锁，使用后释放锁。</li>
+<li>事件标志组(EventGroup): 用于任务间的同步，相比信号量，事件标志组可以等待多个事件的发生。</li>
+<li>消息队列(Queue): 类比全局数据，它可以一次发送多个数据(一般将数据定义成结构体发送)，每次数据的大小固定不变。</li>
+<li>流缓冲区(SteamBuffer)：在队列的基础上，优化的一种更加适合的数据结构，可以一次写入任意数量的字节，并且可以一次读取任意数量的字节。</li>
+<li>消息缓冲区(MessageBuffer)：在流式缓冲区的基础上实现的，可以对消息进行设计改进。每一条消息的写入增加了一个字节用来表示该消息的长度，读取时需要至少一次性读出一条消息，否则会返回0.</li>
+<li>任务通知(Notify): 不同于上面的任务通信方式(使用某种通信对象，通信对象是独立于任务的实体，有单独的存储空间，可以实现数据的传递和较复杂的同步，互斥功能)， 通知是发向一个指定的任务的，直接改变该任务 TCB的某些变量。</li>
+</ul>
+<h3 id="FreeRTOS队列"><a href="#FreeRTOS队列" class="headerlink" title="FreeRTOS队列"></a>FreeRTOS队列</h3><p>在实际应用中，一个任务或中断服务函数经常需要和另一个任务进行消息传递。裸机情况下通常通过全局变量实现。但是操作系统使用全局变量的方式会涉及“资源管理”问题。<strong>FreeRTOS中采用队列机制完成任务与任务，和任务与中断之间的消息传递。</strong> 队列可以存储有限的，大小固定的数据项目。</p>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><p>FreeRTOS创建任务、队列、信号量有两种方法：</p>
+<p>第一种是<strong>由用户自行定义所需的RAM</strong>，这种方法也叫静态的方法。静态方法的函数一般由Static结尾，比如任务创建 <code>xTaskCreateStatic()</code>。 使用此函数创建任务的时候需要用户定义任务堆栈。</p>
+<p>另一种是<strong>动态的申请所需的RAM</strong>，使用动态内存管理时，FreeRTOS内核在创建任务、队列、信号量的时候会动态的申请RAM。C语言标准库的malloc()和free()也可以实现动态内存管理，但这种方法在小型嵌入式系统中效率不高，会占用很多代码空间，并且他们的线程不是安全的，程序执行的时间也是不确定的，此外还会导致内存碎片。因此在FreeRTOS中，内核采用 <code>pvPortMalloc()</code>代替 <code>malloc()</code> 申请内存，采用 <code>vPortFree()</code>函数释放内存。<strong>关于内存分配，FreeRTOS提供了5这种内存分配的方法：</strong> 也就是在5个.c文件，heap_1.c, heap_2.c, heap_3.c, heap_4.c, heap_5.c。</p>
+<p><strong>内存碎片：</strong><br>内存分配与管理的方法中需要解决的问题之一就是内存碎片，其产生过程如下图所示，一个新的内存堆被系统按照应用需求分成多个大小不同的内存块。应用在使用完内存后就会进行释放，同时新的应用产生也需要分配新的可用该内存。经过多次申请和释放后，内存块被不断地分割，导致内存中存在大量的很小的内存块。这些内存块太小导致大多数应用无法使用，因此就形成了内存碎片。这些内存碎片的不断增加会导致实际可用内存越来越少。最终应用程序因为分配不到合适的内存而崩溃。而FreeRTOS的heap_4.c就提供了一个解决内存碎片的方法，即将内存碎片进行合并组成一个新的可用的大内存块。<br><img src="https://cdn.jsdelivr.net/gh/AndreLYL/BlogPictures/blog_files/img/20210509005027.png"></p>
+<p><strong>heap_1.c简介</strong><br>动态内存分配需要一个内存堆，在FreeRTOS中的内存堆为ucHeap[],大小为configTOTAL_HEAP_SIZE.</p>
+<p>heap_1特性如下：</p>
+<ol>
+<li>使用一旦创建好任务，信号量和队列就再也不会删除的应用，实际上大多数的FreeRTOS的应用都是这样的。</li>
+<li>具有可确定性(执行所花费的时间大多数都是一样的)，而且不会导致内存碎片。</li>
+<li>代码实现和内存分配的过程都非常简单，内存是从一个静态的数组中分配的，也就是适合与那些不需要动态分配内存的应用。</li>
+</ol>
+<p><strong>heap_2.c简介</strong></p>
+<p><strong>heap_3.c简介</strong></p>
+<p><strong>heap_4.c简介</strong><br>heap_4提供了一个最优的内存分配方法，不像heap_2, heap_4会将内存中的碎片合并成一个大的可用内存块，他提供了内存合并算法。内存堆为ucHeap[], 大小同样为configTOTAL_HEAP_SIZE。可以通过函数xPortGetFreeHeapSize()获取剩余内存大小。</p>
+<p>heap_4特性如下：</p>
+<ol>
+<li>可以用在那些需要重复创建和删除任务、队列、信号量和互斥信号量等应用中。</li>
+<li>不会像heap_2那样产生严重的内存分配碎片，即使分配的内存大小是随机的。</li>
+<li>具有不确定性，但是远比C标准库的malloc()和free()效率高。</li>
+</ol>
+<p><strong>heap_5简介</strong><br>heap_5使用了heap_4相同的合并算法，内存管理实现基本相同，但是heap_5允许内存堆跨越多个不连续的内存段。如果使用heap_5需要调用函数xPortDefineHeapRegions()来对内存堆做初始化处理，该函数执行完之前禁止调用任何会调用pvPortMalloc()的函数。</p>
+<p>参考资料：<br>[1] <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/336687316">FreeRTOS源码探析之——任务调度相关</a></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-05-06T16:00:00.000Z" title="5/7/2021, 12:00:00 AM">2021-05-07</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-07-19T11:36:54.000Z" title="7/19/2021, 7:36:54 PM">2021-07-19</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></span><span class="level-item">23 minutes read (About 3522 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/05/07/work/004.RTOS/">FreeRTOS学习笔记01</a></h1><div class="content"><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><p><strong>操作系统</strong>：操作系统是一个用以提供基础计算机功能的计算机程序，它可以向其他程序提供服务，应用来实现用户想要实现的功能。操作系统对应用程序的支持使得开发者在在开发应用程序是更加快捷，简单，易维护。</p>
+</li>
+<li><p><strong>RTOS</strong>：大部分操作系统允许多个应用程序同时执行，这种成为多任务。但实际上，在任何一个时间点上只有一个进程在独立执行。由于应用程序切换足够快，好像所有的程序同时执行。操作系统中有一个调度器(Scheduler)的部分负责调度应用程序，决定什么时候执行哪个应用程序，调度器在每个程序之间的切换需要足够快速。实时操作系统费的调度器设计成可以提供确定的执行模式。实时性意味着嵌入式系统对某个具体事件的响应必须严格控制在一个预定的deadline内。<strong>实时操作系统会按照排序运行、管理系统资源，并为开发应用程序提供一致的基础。实时操作系统与一般的操作系统相比，最大的特色就是“实时性”，如果有一个任务需要执行，实时操作系统会马上（在较短时间内）执行该任务，不会有较长的延时。这种特性保证了各个任务的及时执行。</strong></p>
+</li>
+<li><p><strong>线程</strong>：线程是操作系统能够进行运算调度的最小单位，包含在进程中，是进程的实际运作单位。一条线程是进程中的一个单一控制流。线程有四枣红基本状态：产生，阻塞，非阻塞，结束。</p>
+</li>
+<li><p><strong>进程</strong>：指计算机已运行的程序，是分时系统的基本运作单位。进程是程序的真正运行实例。进程有五种状态：新生，运行，等待，就绪，结束。在单CPU系统中，任何时间可能有多个进程在等待，但必定仅有一个进程在运行。</p>
+</li>
+<li><p>线程和进程区别：<strong>进程是资源分配的最小单位，线程是CPU调度的最小单位。</strong>进程和线程都是一个时间段的描述，是CPU工作时间段的描述，是运行中程序指令的描述。</p>
+</li>
+</ul>
+<p><strong>实时操作系统的设计原则：</strong></p>
+<ul>
+<li>实时的消息、事件处理机制：常规的操作系统，消息队列是按照FIFO的方式进行调度。实时操作系统会提供基于优先级的处理方式。</li>
+<li>提供内核级的优先级翻转处理方式：实时操作系统调度器最精彩遇到的问题是优先级翻转，因此对于类似信号量一类的API，都能提供抑制优先级翻转的机制，防止操作系统死锁。</li>
+<li>减少粗粒度的所和长期关中断的使用：这里的所主要是指自旋锁(Spinlock)一类会影响中断的锁，也包括任何关中断的操作，在Windows和Linux的驱动中，为了同步的需要，可能会长期关闭中断，这里的长期可能是毫秒到百微秒级。但实时操作系统通常不允许长期关中断。对于非实时操作系统来说，如果收到外部中断，系统在处理中断的整个过程中可能会一直关中断。但实时操作系统的通常做法是吧中断作为一个事件通告给另外一个任务，interrupt handler在处理完关键数据以后，立即打开中断，驱动的中断处理程序以一个高优先级任务的方式继续执行。</li>
+<li>系统级的服务也要保证实时性：对于一些系统级的服务，如文件系统操作，非实时系统过会缓存用户请求，并不直接把数据写入设备，或者建立一系列线程池，分发文件系统的请求。但是实时系统允许高优先级的任务有限写入数据。这种设计会牺牲性能，但是会保证系统的实时性。</li>
+<li>避免提供实时性不确定的API：多数实时操作系统都不支持虚拟内存(page file &#x2F; swap area),主要原因是缺页中断(page fault)会导致任务调度的不确定性增加。多数实时操作系统过都支持分页，但很少会使用虚拟内存，因为一次缺页中断的开销十分巨大，通常都是毫秒级。会导致用户程序执行的不确定性增加。</li>
+<li>提供针对实时系统调度的专用API：</li>
+<li>降低系统抖动：由于关中断的原因，通常情况下，操作系统的调度器不会太精确的产生周期性的调度。一个设计优秀的实时操作系统能把抖动降低到微妙甚至是百纳秒级别。</li>
+<li>针对实时性设计的SMP和虚拟化技术：</li>
+</ul>
+<h3 id="实时性，硬实时，软实时"><a href="#实时性，硬实时，软实时" class="headerlink" title="实时性，硬实时，软实时"></a>实时性，硬实时，软实时</h3><p><strong>实时性：</strong> 实时性也叫实时计算(real-time computing), 实时约束指的是从事件发生到系统回应之间的最长时间限制。实时程序必须保证在严格时间限制内响应。 换句话说就是，任务(Task)必须在给定的时间(Deadline)内完成。比如汽车安全气囊响应，在汽车检测到撞击后，汽车ECU以及执行器需要在40ms内完全打开气囊，否则就会对乘客安全造成威胁。这个时候就要求汽车ECU的程序运行满足实时性标准。</p>
+<p><strong>硬实时：</strong> The firm real-time definition allows for infrequently missed deadlines. In these applications the system can survive task failures so long as they are adequately spaced, however the value of the task’s completion drops to zero or becomes impossible.</p>
+<p><strong>软实时：</strong> The soft real-time definition allows for frequently missed deadlines, and as long as tasks are timely executed their results continue to have value. Completed tasks may have increasing value up to the deadline and decreasing value past it.</p>
+<p><strong>区别：</strong> 硬实时操作系统<strong>必须</strong>使任务在确定的时间内完成；软实时操作系统能使<strong>绝大多数的</strong>任务在确定时间内完成。因此，硬实时和软实时的差别是，软实时只能提供统计意义上的实时。只要任务及时执行就会具有价值，如果任务超出Deadline，只会导致价值的稍微降低。如计算机的声音系统就是软实时的任务。 而硬实时任务只要超时，任务的价值就会降低到零。</p>
+<h3 id="任务调度"><a href="#任务调度" class="headerlink" title="任务调度"></a>任务调度</h3><p>调度同来确定多任务环境下任务执行的顺序和获得CPU资源后能执行的时间长度。操作系统通过一个调度程序来实现调度功能。调度程序以函数的形式存在，用来实现操作系统的调度算法。调度程序本身并不是一个任务，是一个函数调用，可在内核的各个部分进行调用。调用调度程序的具体位置成为一个调度点(Scheduling point), 调度点通常处于一下位置：**(i)** 中断服务程序的结束位置；**(ii)** 任务因等待资源而处于等待状态；**(iii)** 任务处于就绪状态时。</p>
+<p>在操作系统中，一个任务有三种典型状态：</p>
+<ul>
+<li>正在运行(Running)：正在CPU中执行</li>
+<li>待命(Ready)：等待执行</li>
+<li>阻塞(Blocked)：任务暂停，等待一个事件的发生，例如接受一组数据</li>
+</ul>
+<p>由于CPU在某个事件只能执行一个任务，因此大部分任务在多数事件处于阻塞或待命状态。可能大量的项目在待命列表里等待执行。这取决于系统所需的任务数量和调度器类型。通常情况下，简单的时间触发式调度器，待命任务列表的数据结构要尽可能缩短最坏情况下，程序在调度器关键部分的执行时间，防止其他任务一直在待命列表中无法及时执行。在这种调度器中，应该尽量避免抢占式任务，甚至应该关闭调度器之外的所有中断。并且待命列表的数据结构应该根据系统所需要最大任务数量进行优化。如果列表任务较多，双向链表是一个合适的结构。在任务列表的排序上，应该按照优先级对任务进行排序。这样可以保证高优先级任务的及时执行。</p>
+<p><strong>调度算法：</strong><br>实时操作系统需要采用各种算法和策略保证系统行为的可预测性，并且调用一切可利用的资源完成实时控制任务。 其实时调度算法分为三种类别：基于优先级的调度算法(Priority-driven scheduling-PD)，基于CPU使用比例的共享式调度算法(Share-drivescheduling-SD)，基于时间进程的调度算法(Time—driven schedulinq-TD)。</p>
+<p>基于优先级的调度算法给每个进程分配一个优先级，在每次进程调度的时候，最高优先级任务首先被执行。算法的类型分为两种：</p>
+<p>静态调度：静态调度在系统开始运行前进行调度，严格的静态调度在系统运行时无法对任务重新调度。静态调度的目标是把任务分配给各个处理机，并对每一处立即给出所要运行的静态运行顺序。静态调度算法实现简单</p>
+<h3 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h3><p><strong>死锁：</strong> 死锁是指一组进程中的各个进程均占有不会释放的资源，但因互相申请被其他进程所占用的不会释放的资源而处于的一种永久等待的状态。</p>
+<p><strong>死锁的四个条件：</strong> </p>
+<ul>
+<li>互斥条件(Mutual exclusion)：资源不能被共享，只能由一个进程使用</li>
+<li>请求与保持条件(Hold and wait)：已经得到资源的进程可以再次申请新的资源</li>
+<li>非剥夺条件(No pre-emption)：已经分配的资源不能从相应的进程中被强制的剥夺</li>
+<li>循环等待条件(Circular wait)：系统中的若干进程组成的环路，该环路中每个进程都在灯带相邻进程正占用的资源</li>
+</ul>
+<p><strong>互斥锁：</strong> 互斥锁是一种独占锁，当线程A加锁成功后，此时的互斥锁已经被线程A独占了，只要A没有释放受众的锁，线程B加锁就会失败，于是就是会释放CPU让给其他线程，既然B释放了CPU，也就意味着线程B的加锁代码会被阻塞。对于互斥锁加锁失败而阻塞的现象，是由操作系统内核实现的。</p>
+<p><strong>自旋锁：</strong> 自旋锁是一种特殊的互斥锁，当资源被加锁后，其他线程想要再次加锁，此时该线程不会被阻塞睡眠而是陷入循环等待状态(CPU不能做其他事情)，循环检查资源持有者是否已经释放了资源，这样做的好处是减少了线程从睡眠到唤醒的资源消耗，但是会一直占用CPU资源。适用于资源的锁被持有时间段，而又不希望在线程的唤醒上花费太多资源的情况。</p>
+<ol>
+<li>自旋锁为什么不能睡眠？<br> 因为需要循环检测lock变量。</li>
+</ol>
+<h3 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h3><ol>
+<li><strong>介绍一下FreeRTOS的内存管理？</strong></li>
+</ol>
+<ul>
+<li>heap_1：只申请不释放，适用于一旦创建好任务，信号量和队列就再也不会删除的应用。</li>
+<li>heap_2：最佳匹配，即申请又释放，适用于可能会重复的删除的任务，队列，信号量等应用中，需要注意内存碎片的产生问题。</li>
+<li>heap_3：简单封装malloc,free,对其进行线程保护。使用时需要编译器提供一个内存堆，编辑器库需要提供malloc()和free()函数。</li>
+<li>heap_4：最佳匹配+合并相邻内存，具有不确定性，但不会产生严重的内存碎片</li>
+<li>heap_5：最佳匹配+合并不连续的内存区。</li>
+</ul>
+<ol start="2">
+<li><strong>简述RTOS中，栈空间的最大使用率和栈溢出的检测方法？</strong></li>
+</ol>
+<ul>
+<li>方法一：在任务切换时检测任务指针是否越界，如果越界就会在任务切换时触发栈溢出的钩子函数</li>
+<li>方法二：在任务创建的时候将任务战所有数据初始化为0Xa5，任务切换进行任务栈检测时检测末尾的16个字节是否都是0xa5，通过这种方式检测栈是否溢出。</li>
+</ul>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>[1] <a target="_blank" rel="noopener" href="https://blog.csdn.net/u012993936/article/details/41145863">https://blog.csdn.net/u012993936/article/details/41145863</a><br>[2] <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/86861756">https://zhuanlan.zhihu.com/p/86861756</a></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-05-02T16:00:00.000Z" title="5/3/2021, 12:00:00 AM">2021-05-03</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-05-09T08:40:04.000Z" title="5/9/2021, 4:40:04 PM">2021-05-09</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></span><span class="level-item">16 minutes read (About 2386 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/05/03/work/Emmbed_system_QA/">嵌入式面试常见问题整理</a></h1><div class="content"><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="单工，半双工，全双工"><a href="#单工，半双工，全双工" class="headerlink" title="单工，半双工，全双工"></a>单工，半双工，全双工</h4><ul>
+<li>单工：简单的说就是一方只能发信息，另一方则只能收信息，通信是单向的。</li>
+<li>半双工：比单工先进一点，就是双方都能发信息，但同一时间则只能一方发信息。</li>
+<li>-全双工：比半双工再先进一点，就是双方不仅都能发信息，而且能够同时发送。</li>
+</ul>
+<h4 id="FLASH-和-EEPROM区别"><a href="#FLASH-和-EEPROM区别" class="headerlink" title="FLASH 和 EEPROM区别"></a>FLASH 和 EEPROM区别</h4><p>基本概念：</p>
+<ul>
+<li>ROM： Read-Only Memory</li>
+<li>RAM： Random Access Memory</li>
+<li>FLASH: Flash 存储器（FLASH EEPROM）又称闪存，快闪。它是EEPROM的一种。它结合了ROM和RAM的长处。不仅具备电子可擦除可编辑（EEPROM）的性能，还不会断电丢失数据同时可以快速读取数据</li>
+<li>EEPROM: Electrically-Erasable Programmable Read-Only Memory</li>
+<li>SRAM：静态RAM，读写速度非常快，比较昂贵。一般用于CPU的一级缓冲，二级缓冲。</li>
+<li>DRAM：动态RAM，DRAM保留数据的时间很短，速度比SRAM慢，但是比任何ROM快。计算机的内存是DRAM。</li>
+</ul>
+<p>FLASH和EEPROM的最大区别是FLASH按扇区操作，EEPROM则按字节操作，二者寻址方法不同，存储单元的结构也不同，FLASH的电路结构较简单，同样容量占芯片面积较小，成本自然比EEPROM低，因而适合用作程序存储器，EEPROM则更多的用作非易失的数据存储器。</p>
+<p>目前的单片机，RAM主要是做运行时数据存储器,FLASH主要是程序存储器,EEPROM主要是用以在程序运行保存一些需要掉电不丢失的数据. </p>
+<ol>
+<li><strong>Nano Flash和NOR Flash的区别：</strong><br>目前Flash主要有NANO和NOR两种</li>
+</ol>
+<ul>
+<li>NOR Flash：该种Flash的读写和创建的SDRAM读写一样，用户可以直接运行装载在NOR Flash里面的代码，这样可以减少SRAM的容量从而节约成本。</li>
+<li>NANO Flash：NAND Flash没有采取内存的随即读取技术，它的读取是一次读取一块的形式来进行的，通常是一次读取512个字节，采用这种技术的Flash比较廉价，用户无法直接运行上面的代码。</li>
+</ul>
+<p><img src="https://pic1.zhimg.com/80/v2-0f09c39ef43d96bbb68864e85ed9fcd0_720w.jpg"></p>
+<h3 id="总线协议"><a href="#总线协议" class="headerlink" title="总线协议"></a>总线协议</h3><h4 id="CAN总线协议-Controller-Area-Network"><a href="#CAN总线协议-Controller-Area-Network" class="headerlink" title="CAN总线协议(Controller Area Network)"></a>CAN总线协议(Controller Area Network)</h4><p>CAN总线协议是由博世开发的一种基于消息广播模式的串行通信总线，该协议非常适合于现场控制领域，主要用于实现汽车ECU之间的可靠通信。该通讯协议最高速率可达到1Mbps, 容错能力强。CAN控制器包含强大的检错和处理机制。另外CAN的节点之间不会传输大数据块，一帧CAN消息最多传输8字节用户数据。</p>
+<p><strong>总线特点</strong></p>
+<ul>
+<li><strong>多主控制</strong>，总线空闲时所有单元都可以发送消息，最先访问总线的单元获得发送权，多个单元同时发送时，发送优先级高的可以发送。发送的消息保温不包含原地址和目标地址，只通过标识符表示消息的功能和优先级。</li>
+<li><strong>总线为事件触发型</strong>，只有消息要发送时，节点才向总线上广播消息; 同时每个节点也可以通过发送远程帧请求其他节点发送数据。</li>
+<li><strong>总线上可同时连接多个节点</strong>，可连接节点总数在理论上是没有限制的，实际可连接的节点数受总线上的时间延迟和电气负载限制。</li>
+<li><strong>符合OSI通信系统参考模型</strong>，属于物理层和数据链路层。两线式总线结构，电气信号为差分式，通信介质可以采用双绞线，同轴电缆和光导纤维，一般采用双绞线。</li>
+<li><strong>总线电平</strong>：显性(Dominant): 0, 隐性(Recessive): 1, CAN总线的信号电平具有线与特性，即显性电平0总是会掩盖隐性电平1，如果不同的节点同时发送显性和隐性电平，总线总是表现出显性电平。只有所有节点发送隐性电平是，总线才表现为隐性。<strong>线与特性是CAN总线仲裁机制的电路基础</strong>。</li>
+<li><strong>高速CAN</strong>：总线通信速度最高1Mbp(40m条件下)。高速CAN时，CANH与CANL电压相同时为逻辑“1” (CANH&#x3D;CANL&#x3D;2.5V)。CANH和CANL电压相差2V时为逻辑“0” (CANH&#x3D;3.5V, CANL&#x3D;1.5V)。高速CAN收发器在共模电压范围内(-12V~12V),将CANH和CANL电压差大于0.9V成为显性状态，将CANH和CANL电压差小于0.5定义为隐性状态。</li>
+</ul>
+<p><img src="https://img2018.cnblogs.com/blog/917884/201906/917884-20190629175927325-911993050.png" alt="高速CAN信号电平（ ISO 11898-2）"></p>
+<ul>
+<li><strong>低速CAN</strong>：定义CANH和CANL电压相差 5V （CANH &#x3D; 0V, CANL &#x3D; 5V）时为逻辑“1”，相差 2.2V （CANH &#x3D; 3.6V, CANL &#x3D; 1.4V）时为逻辑“0”。</li>
+</ul>
+<p><img src="https://img2018.cnblogs.com/blog/917884/201906/917884-20190629180018330-1726697444.png" alt="低速CAN信号电平（ ISO 11898-3）"></p>
+<p><strong>CAN报文帧结构</strong>：在CAN总线上，报文以“帧”的形式发送，每个报文帧包含以下部分：</p>
+<ul>
+<li>帧起始：总线空闲时为隐性状态，帧起始由单个显性位构成，标志报文开始，在总线上起同步作用。</li>
+<li>仲裁段：仲裁段由报文的标识符完成，即ID，标准CAN的标识符为11位，扩展CAN中为29位。</li>
+<li>控制段：主要定义了数据域的字节长度，通过数据长度码，接收节点可以判断报文数据是否完整。</li>
+<li>数据域：主要包含0~8个字节数据。</li>
+<li>CRC域：循环冗余码校验</li>
+<li>帧结束：由一串七个隐性位组成，表示报文帧的结束。</li>
+</ul>
+<p><strong>CAN报文帧种类</strong></p>
+<p>（1）数据帧：由发送节点发出，包含0 - 8个数据字节。</p>
+<p>（2）远程帧：发送远程帧向网络节点请求发送某一标识符的数据帧。</p>
+<p>（3）错误帧：总线节点发现错误时，以错误帧的方式通知网络上的其他节点。</p>
+<p>（4）过载帧：发送过载帧，表示当前节点不能处理后续的报文（如帧延迟等）。</p>
+<h4 id="SPI协议"><a href="#SPI协议" class="headerlink" title="SPI协议"></a>SPI协议</h4><p>SPI(Serial Peripheral interface)串行外围设备接口，该接口主要用在EEPROM，Flash，实时时钟，AD转化器，数字信号处理器和数字信号解码器之间。</p>
+<ul>
+<li>该协议是一种高速的，<strong>全双工同步串行</strong>通信总线。</li>
+<li>没有速度限制，一般可达到10Mbps。</li>
+<li>主要有四根线：MOSI， MISO，SCLK，CS(片选，选择从设备)。数据在上升下降沿改变。</li>
+<li>优点：全双工通信，简单，传输速率快</li>
+<li>缺点：没有指定的流控制，没有应答机制确认是否收到数据，相对IIC可靠性不高。</li>
+</ul>
+<ol>
+<li>SPI的四种模式：<br>SPI有四种工作模式，SPI为了和外设进行数据交换，根据外设工作要求，其输出串行同步时钟的极性(CPOL)和时钟相位(CPHA)可以进行配置。CPOL决定SPI空闲时，时钟信号的电平。CPHA决定SPI在SCLK的第几个边沿开始采样数据。</li>
+</ol>
+<ul>
+<li>CPOL&#x3D;0：串行同步时钟的空闲状态是低电平</li>
+<li>CPOL&#x3D;1：串行同步时钟的空闲状态是高电平</li>
+<li>CPHA&#x3D;0：SPI在串行同步时钟的第一个跳边沿开始采样</li>
+<li>CPHA&#x3D;1：SPI在串行同步时钟的第二个跳边沿开始采样</li>
+</ul>
+<h3 id="DMA"><a href="#DMA" class="headerlink" title="DMA"></a>DMA</h3><p>DMA(Direct Memory Access),即直接存储器访问，DMA的传输方式可以无需CPU直接进行控制传输，也没有中断处理方式那样的保护现场和恢复现场的过程。通过硬件为RAM与I&#x2F;O设备开辟一条直接传输数据的通路，可以使CPU的效率大为提高。</p>
+<ul>
+<li>作用： 用于内存和内存之间或内存和外设之间的高速数据传输。</li>
+</ul>
+<ol>
+<li><strong>DMA传输包括哪些操作？</strong>(STM32为例)<br>每一次DMA传输包括三个操作<ul>
+<li>通过DMA的寄存器寻址，从外设数据寄存器或存储器单元加载数据。</li>
+<li>DMA计数器在数据存储结束后递减，该计算器中包含仍需执行的事务数目。</li>
+</ul>
+</li>
+</ol>
+<p>产生事件后，外设会向DMA控制器发送请求信号，DMA控制器根据通道优先级处理该请求，只要DMA控制器访问外设，DMA控制器就会向外设发送确认信号，外设获得确认信号后，便会立即释放请求。一旦外设使请求失效，DMA就会释放确认信号。如果有更多的请求，外设可以启动下一个事务。</p>
+<h2 id="C语言"><a href="#C语言" class="headerlink" title="C语言"></a>C语言</h2><h3 id="Static关键字作用"><a href="#Static关键字作用" class="headerlink" title="Static关键字作用"></a>Static关键字作用</h3><h3 id="Const关键字作用"><a href="#Const关键字作用" class="headerlink" title="Const关键字作用"></a>Const关键字作用</h3><h3 id="Voilatile关键字作用"><a href="#Voilatile关键字作用" class="headerlink" title="Voilatile关键字作用"></a>Voilatile关键字作用</h3></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2019-05-04T16:00:00.000Z" title="5/5/2019, 12:00:00 AM">2019-05-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-05-09T07:24:54.000Z" title="5/9/2021, 3:24:54 PM">2021-05-09</time></span><span class="level-item"><a class="link-muted" href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></span><span class="level-item">6 minutes read (About 855 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/05/05/work/002.ISO26262/">ISO26262标准</a></h1><div class="content"><h3 id="ISO26262标准是什么"><a href="#ISO26262标准是什么" class="headerlink" title="ISO26262标准是什么"></a>ISO26262标准是什么</h3><p>随着汽车电气化程度的进一步提升，电子电气系统越来越集成和复杂，因此需要一些眼科的技术标准来规范汽车电子相关功能安全。</p>
+<p>ISO26262标准是汽车的电气&#x2F;电子相关的“功能安全”标准。该标准制定于2011年11月，2018年发布了第二版，并追加了半导体指南。</p>
+<p>该标准是预先计算出汽车电控方面的故障风险，并把降低该风险的机制作为功能的一部分预先植入到系统当中，从而实现“功能安全”的标准化开发工艺。ISO26262标准的对象涵盖从车辆构思到系统，ECU(电子控制单元)，嵌入式软件，元器件开发及相关的生产、维护、报废等整个车辆的开发周期。<br><img src="https://www.21ic.com/uploads/21/5f28c2704a418.png" alt="ISO26262的具体规范内容"></p>
+<h3 id="ISO26262功能安全定义"><a href="#ISO26262功能安全定义" class="headerlink" title="ISO26262功能安全定义"></a>ISO26262功能安全定义</h3><p><strong>本质安全和功能安全：</strong> 本质安全是一种通过消除危险的原因来确保安全的方法，通过改变机器设备，人为，环境等因素彻底消除诱因。而功能安全是通过一个有效的改善方法，在功能上确保可容忍范围的安全，即将风险降低到可接受的水平来确保安全。</p>
+<p><strong>ISO26262功能安全定义</strong></p>
+<ul>
+<li>Absence of unreasonable risk due to hazards caused by malfunctioning behavior of E&#x2F;E systems.</li>
+<li>没有由电子，电气系统故障行为导致的危险所引起的不合理的风险。</li>
+</ul>
+<p>这段话的理解是不存在<strong>由电子电气系统的功能异常表现</strong>引起的危害而导致不合理的风险。比如，汽车正常行驶情况下安全气囊打开，这种功能异常是不合理的，也会带来安全方面的风险。这就是功能安全所需要避免的问题。总体来说，功能安全是指避免由系统功能性故障导致的不可接受的风险，<strong>它关注的是系统发生故障之后的行为，而不是系统的原有功能和性能。</strong>因此功能安全的目的就是<strong>当系统发生故障后，使系统进入安全的可控模式，避免对人身，财产造成伤害。</strong></p>
+<h3 id="ISO26262适用范围"><a href="#ISO26262适用范围" class="headerlink" title="ISO26262适用范围"></a>ISO26262适用范围</h3><ul>
+<li>This document is intended to be applied to safety-related systems that include one or more electrical and&#x2F;or eletronic (E&#x2F;E) systems and that are installed in series production road vehicles, excluding mopeds. This docement does not address unique E&#x2F;E systems in special vehicles such as E&#x2F;E systems designed for driver with disabilities.(ISO26262-2018)</li>
+</ul>
+<p>即该标准适用于所有的汽车、电动车。但是不包括轻便摩托车和特种车。</p>
+<h3 id="ISO26262的内容"><a href="#ISO26262的内容" class="headerlink" title="ISO26262的内容"></a>ISO26262的内容</h3><p>该功能安全标准主要包含了：</p>
+<ol>
+<li>指导我们如何量化产品的安全等级；</li>
+<li>知道我们如何根据不同的安全等级设计相应的安全措施</li>
+<li>指导我们如何规避&#x2F;控制系统性的故障和随机故障</li>
+<li>知道我们如果管理功能安全(包括流程，技术分析方法等)</li>
+</ol>
+<p><img src="https://pic1.zhimg.com/80/v2-6bb59607c82205cfa40516698acc6380_720w.jpg" alt="ISO26262-2018"></p>
+<h2 id="自适应巡航控制-ACC-功能安全"><a href="#自适应巡航控制-ACC-功能安全" class="headerlink" title="自适应巡航控制(ACC)功能安全"></a>自适应巡航控制(ACC)功能安全</h2></div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Your name"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Your name</p><p class="is-size-6 is-block">Your title</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Your location</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">32</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">15</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E6%85%8E%E6%80%9D/"><span class="level-start"><span class="level-item">慎思</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%9C%AF%E4%B8%9A/"><span class="level-start"><span class="level-item">术业</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%8E%A9%E7%89%A9/"><span class="level-start"><span class="level-item">玩物</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-20T14:52:03.519Z">2022-03-20</time></p><p class="title"><a href="/2022/03/20/work/matplotlib/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-20T14:52:03.515Z">2022-03-20</time></p><p class="title"><a href="/2022/03/20/work/003.Autosar/"> </a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/05/09/work/005.FreeRTOS/"><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg" alt="FreeRTOS学习笔记02"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-05-08T16:00:00.000Z">2021-05-09</time></p><p class="title"><a href="/2021/05/09/work/005.FreeRTOS/">FreeRTOS学习笔记02</a></p><p class="categories"><a href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/05/07/work/004.RTOS/"><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg" alt="FreeRTOS学习笔记01"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-05-06T16:00:00.000Z">2021-05-07</time></p><p class="title"><a href="/2021/05/07/work/004.RTOS/">FreeRTOS学习笔记01</a></p><p class="categories"><a href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/05/03/work/Emmbed_system_QA/"><img src="http://ww1.sinaimg.cn/large/006E0Yd9gy1gaeafbwql6j30sg0g0aa5.jpg" alt="嵌入式面试常见问题整理"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-05-02T16:00:00.000Z">2021-05-03</time></p><p class="title"><a href="/2021/05/03/work/Emmbed_system_QA/">嵌入式面试常见问题整理</a></p><p class="categories"><a href="/categories/%E6%9C%AF%E4%B8%9A/">术业</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">May 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">February 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/01/"><span class="level-start"><span class="level-item">January 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/05/"><span class="level-start"><span class="level-item">May 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/04/"><span class="level-start"><span class="level-item">April 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/02/"><span class="level-start"><span class="level-item">February 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/01/"><span class="level-start"><span class="level-item">January 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">December 2019</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/05/"><span class="level-start"><span class="level-item">May 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/03/"><span class="level-start"><span class="level-item">March 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/02/"><span class="level-start"><span class="level-item">February 2019</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Apollo/"><span class="tag">Apollo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Blogs/"><span class="tag">Blogs</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CV/"><span class="tag">CV</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Self-driving/"><span class="tag">Self-driving</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tensorflow/"><span class="tag">Tensorflow</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nvidia/"><span class="tag">nvidia</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/object-detection/"><span class="tag">object detection</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/photo/"><span class="tag">photo</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/point-cloud/"><span class="tag">point cloud</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pytorch/"><span class="tag">pytorch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"><span class="tag">嵌入式</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BB%BA%E6%A8%A1/"><span class="tag">建模</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%B7%E5%9B%BD%E9%A9%BE%E7%85%A7/"><span class="tag">德国驾照</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%88%AA%E6%8B%8D/"><span class="tag">航拍</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a><p class="is-size-7"><span>&copy; 2022 John Doe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
